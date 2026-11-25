@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Darmon–Vonk Data</title>
-<meta name="description" content="Companion database of the Darmon–Vonk J values: p-adic values of rigid meromorphic cocycles at real quadratic cycles, with their algebraic recognitions.">
+<title>Quaternionic Darmon–Vonk Data</title>
+<meta name="description" content="Companion database of the quaternionic Darmon–Vonk J values: p-adic values of rigid meromorphic cocycles at real quadratic cycles, with their algebraic recognitions.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="index.html">Darmon–Vonk data</a>
+  <a class="brand" href="index.html">Quaternionic Darmon–Vonk data</a>
   <nav class="site-nav">
     <a href="index.html" aria-current="page">Home</a>
     <a href="jvalues.html">J values</a>
@@ -18,10 +18,10 @@
   </nav>
 </header>
 <main>
-  <h1>Darmon–Vonk data</h1>
+  <h1>Quaternionic Darmon–Vonk data</h1>
   <p class="lead">
     This database accompanies the articles on the values of rigid meromorphic cocycles for p-arithmetic groups
-    attached to quaternion algebras, after Darmon–Vonk. It holds the p-adic values J computed at real quadratic
+    attached to quaternion algebras, after the work of Darmon–Vonk and Guitard-Masdeu-Xarles. It holds the p-adic values J computed at real quadratic
     cycles, and the algebraic numbers they were recognized as. Every value can be copied as a line of Sage code that
     rebuilds it exactly.
   </p>
@@ -68,7 +68,7 @@ getRelease().then((rel) => {
   if (!rel.doi && !rel.concept_doi) return;
   // AUTHORS are filled in at release time (CITATION.cff); the DOIs come from data/release.json
   const authors = (rel.authors || []).join(", ");
-  document.getElementById("cite-text").innerHTML = `${authors ? esc(authors) + ". " : ""}${esc(rel.title || "Darmon–Vonk data")}, release ${esc(rel.version)}. Zenodo, ${doiLink(rel.doi)}${
+  document.getElementById("cite-text").innerHTML = `${authors ? esc(authors) + ". " : ""}${esc(rel.title || "Quaternionic Darmon–Vonk data")}, release ${esc(rel.version)}. Zenodo, ${doiLink(rel.doi)}${
     rel.concept_doi ? ` (all versions: ${doiLink(rel.concept_doi)})` : ""}. Please cite the specific release you used.`;
   document.getElementById("cite").hidden = false;
 });
@@ -84,7 +84,7 @@ getCatalog().then((cat) => {
   const points = names.reduce((s, l) => s + levels[l].n_points, 0);
   const desc = names.map((l) => `${l.replaceAll("_", ".")} (P${levels[l].precision})`).join(", ");
   document.getElementById("jvalues-stats").textContent =
-    `${points.toLocaleString("en")} values · level${names.length > 1 ? "s" : ""} ${desc}`;
+    `${points.toLocaleString("en")} values · triplet${names.length > 1 ? "s" : ""} ${desc}`;
 }).catch((e) => {
   document.getElementById("jvalues-stats").textContent = `Could not load the catalog: ${e.message}`;
 });

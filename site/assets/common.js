@@ -76,7 +76,7 @@ export async function bulkSage(labels, header) {
   const pairsDone = new Set();
   for (const [level, ls] of byLevel) {
     let lastField = null;
-    out.push(`# level ${level}`);
+    out.push(`# triplet ${level.replaceAll("_", ".")}`);
     for (const label of ls) {
       const { point, parsed } = await getPoint(label);
       const s = sageParts(point.sage);

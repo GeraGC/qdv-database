@@ -72,8 +72,8 @@ def main():
         page.call("Page.enable"); page.call("Network.enable")
         version = json.loads(urllib.request.urlopen(f"http://localhost:{dbg}/json/version").read())["Browser"]
         out = {"browser": version, "host": os.uname().nodename, "date": time.strftime("%Y-%m-%dT%H:%M:%S"), "loads": [], "filters": []}
-        scenarios = [("jvalues", "/jvalues.html?level=5_6_1"),
-                     ("jvalues_all_levels", "/jvalues.html?level=3_10_1,3_10_7,3_14_5,5_6_1,5_6_7,5_14_3,7_6_5"),
+        scenarios = [("jvalues", "/jvalues.html?triplet=5_6_1"),
+                     ("jvalues_all_levels", "/jvalues.html?triplet=3_10_1,3_10_7,3_14_5,5_6_1,5_6_7,5_14_3,7_6_5"),
                      ("precomputed", "/precomputed.html"),
                      ("point_small_pair", "/point.html?label=5.6.1-8.53-0.0-Je"),
                      ("point_5_6_1_largest_pair", "/point.html?label=5.6.1-92.77-3.5-Jm"),
@@ -90,7 +90,7 @@ def main():
                 print(name, cache, [t.get("nav_ready_ms") for t in times], flush=True)
         # filter changes on the table page (warm), on all levels at once
         page.call("Network.setCacheDisabled", cacheDisabled=False)
-        page.call("Page.navigate", url=base + "/jvalues.html?level=3_10_1,3_10_7,3_14_5,5_6_1,5_6_7,5_14_3,7_6_5")
+        page.call("Page.navigate", url=base + "/jvalues.html?triplet=3_10_1,3_10_7,3_14_5,5_6_1,5_6_7,5_14_3,7_6_5")
         page.wait("document.getElementById('perf') && document.getElementById('perf').dataset.nav_ready_ms")
         for key, value in [("cert", "agree"), ("parity", "Je"), ("field", "outside_H"), ("parity", ""), ("cert", "")]:
             page.eval(f"""(() => {{ const s = document.querySelector('select[data-key="{key}"]'); s.value = '{value}';

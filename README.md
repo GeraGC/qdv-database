@@ -12,7 +12,7 @@ recognized as. It is the companion of the articles that use these computations.
 ## What is in it
 
 - **J values:** every value, in its four parities, at a stated p-adic precision. Each value comes with:
-  - the recognitions by lindep, algdep, the in-field method and (at one level) the support lindep;
+  - the recognitions by lindep, algdep, the in-field method and (for one triplet) the support lindep;
   - the comparison of their certificates;
   - a line of Sage code that rebuilds it exactly.
 - **Quaternion algebras and groups:** the algebras, Eichler orders, candidates and optimal embeddings, and the stored

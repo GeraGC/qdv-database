@@ -9,7 +9,7 @@
 <body>
 <main>
   <h1>Self-test of the site code</h1>
-  <p class="muted">Checks the JavaScript helpers against the export of one level (selftest.html?level=5_6_1). The
+  <p class="muted">Checks the JavaScript helpers against the export of one triplet (selftest.html?triplet=5_6_1). The
     result is written below as JSON; tests/site_selftest.sh reads it from a headless browser.</p>
   <pre id="result" class="bigval">running…</pre>
 </main>
@@ -20,7 +20,7 @@ async function run() {
   const t0 = performance.now();
   const cat = await getCatalog();
   const levels = cat.kinds.jvalues.levels;
-  const want = new URLSearchParams(location.search).get("level") || "all";
+  const want = new URLSearchParams(location.search).get("triplet") || "all";
   const levelNames = want === "all" ? Object.keys(levels) : [want];
   const failures = {};
   const fail = (k, x) => { (failures[k] ||= []).push(x); };

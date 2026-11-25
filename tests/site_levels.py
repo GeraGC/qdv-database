@@ -1,6 +1,6 @@
 """Level selection on the table page, in headless Chromium (DevTools protocol): no level in the URL gives the default
-level; "none" gives an empty table and level= in the URL; ticking and "all" swap the data without reloading the
-page; a stale filter (Dco absent from the new levels) is dropped; reloading with level= stays empty.
+level; "none" gives an empty table and triplet= in the URL; ticking and "all" swap the data without reloading the
+page; a stale filter (Dco absent from the new levels) is dropped; reloading with triplet= stays empty.
 Usage (any Python with websocket-client, chromium on the machine): python tests/site_levels.py [--port 8765]"""
 import argparse, json, shutil, subprocess, sys, tempfile, time, urllib.request
 from pathlib import Path
@@ -39,18 +39,18 @@ def main():
         s = page.eval(state); check("default level when the URL has none", s["checked"] == ["5_6_1"] and s["rows"] == "1824", s)
         page.eval("window.__marker = 'same page'")  # survives only if the page is not reloaded
         page.eval("document.getElementById('levels-none').click()"); time.sleep(0.5)
-        s = page.eval(state); check("none: empty table, level= in the URL", s["rows"] == "0" and "level=" in s["url"] and not s["checked"], s)
+        s = page.eval(state); check("none: empty table, triplet= in the URL", s["rows"] == "0" and "triplet=" in s["url"] and not s["checked"], s)
         page.eval("""(() => { const c = document.querySelector('#levels input[value="7_6_5"]'); c.checked = true; c.dispatchEvent(new Event('change')); })()"""); time.sleep(0.8)
         s = page.eval(state); check("tick 7.6.5: its 640 values, no reload", s["rows"] == "640" and s["marker"] == "same page", s)
         page.eval("document.getElementById('levels-all').click()"); time.sleep(1.5)
         s = page.eval(state); check("all: 13,120 values, no reload", s["rows"] == "13120" and s["marker"] == "same page", s)
         # a filter value absent from the new selection is dropped
-        page.call("Page.navigate", url=base + "?level=5_6_1&Dco=8"); page.wait(ready); time.sleep(0.3)
+        page.call("Page.navigate", url=base + "?triplet=5_6_1&Dco=8"); page.wait(ready); time.sleep(0.3)
         page.eval("""(() => { document.querySelector('#levels input[value="5_6_1"]').checked = false;
           const c = document.querySelector('#levels input[value="7_6_5"]'); c.checked = true; c.dispatchEvent(new Event('change')); })()"""); time.sleep(0.8)
         s = page.eval(state); check("switch 5.6.1 (Dco=8) -> 7.6.5: Dco filter dropped", s["rows"] == "640" and "Dco=" not in s["url"], s)
-        page.call("Page.navigate", url=base + "?level="); page.wait(ready); time.sleep(0.3)
-        s = page.eval(state); check("reload with level= stays empty", s["rows"] == "0" and not s["checked"], s)
+        page.call("Page.navigate", url=base + "?triplet="); page.wait(ready); time.sleep(0.3)
+        s = page.eval(state); check("reload with triplet= stays empty", s["rows"] == "0" and not s["checked"], s)
     finally:
         chrome.terminate(); shutil.rmtree(prof, ignore_errors=True)
     (st.REPO / "results/site_levels.json").write_text(json.dumps(results, indent=1))

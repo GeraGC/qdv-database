@@ -32,9 +32,9 @@ let layoutKey = "";
 
 function readURL() {
   const q = new URLSearchParams(location.search);
-  // "level" absent: first visit, default level; "level=" (empty): no level selected on purpose
-  state.levelsGiven = q.has("level");
-  state.levels = (q.get("level") || "").split(",").filter(Boolean);
+  // "triplet" absent: first visit, default triplet; "triplet=" (empty): no triplet selected on purpose
+  state.levelsGiven = q.has("triplet");
+  state.levels = (q.get("triplet") || "").split(",").filter(Boolean);
   for (const f of FILTERS) if (q.has(f.key)) state.filters[f.key] = q.get(f.key);
   state.search = q.get("q") || "";
   state.primes = q.get("primes") || "";
@@ -42,7 +42,7 @@ function readURL() {
 
 function writeURL() {
   const q = new URLSearchParams();
-  q.set("level", state.levels.join(","));
+  q.set("triplet", state.levels.join(","));
   for (const [k, v] of Object.entries(state.filters)) if (v !== "") q.set(k, v);
   if (state.search) q.set("q", state.search);
   if (state.primes) q.set("primes", state.primes);
@@ -78,8 +78,8 @@ function buildFilters() {
   for (const f of FILTERS) {
     const opts = optionValues(f);
     const hasNull = allRows.some((r) => r[f.key] === null || r[f.key] === undefined);
-    if (!opts.length && !(f.key in state.filters)) continue; // e.g. support lindeps outside 7.6.5, or no level
-    // a value that the selected levels do not have (e.g. Dco=8 after switching to 7.6.5) is dropped
+    if (!opts.length && !(f.key in state.filters)) continue; // e.g. support lindeps outside 7.6.5, or no triplet
+    // a value that the selected triplets do not have (e.g. Dco=8 after switching to 7.6.5) is dropped
     if (f.key in state.filters && state.filters[f.key] !== "null" && !opts.some((v) => String(v) === state.filters[f.key])) {
       delete state.filters[f.key];
     }
@@ -168,7 +168,7 @@ function columns(multiLevel, hasSupport) {
       download: false },
     col("Label", "label", "label", { frozen: true, width: 200,
       formatter: (c) => `<a class="lbl" href="point.html?label=${encodeURIComponent(c.getValue())}">${esc(c.getValue())}</a>` }),
-    ...(multiLevel ? [col("Level", "level", "level", { width: 84 })] : []),
+    ...(multiLevel ? [col("Triplet", "level", "level", { width: 84 })] : []),
     col("Dco", "Dco", "discriminants", { html: "D<sub>co</sub>", width: 76, hozAlign: "right", sorter: "number" }),
     col("Dcy", "Dcy", "discriminants", { html: "D<sub>cy</sub>", width: 76, hozAlign: "right", sorter: "number" }),
     col("i", "i", "embeddings", { width: 56, hozAlign: "right", sorter: "number" }),
@@ -201,7 +201,7 @@ function copyRow(row) {
 }
 
 function header() {
-  return `Darmon–Vonk data, exported values (see the label comments); copied ${new Date().toISOString().slice(0, 19)} from ${location.href}`;
+  return `Quaternionic Darmon–Vonk data, exported values (see the label comments); copied ${new Date().toISOString().slice(0, 19)} from ${location.href}`;
 }
 
 async function copyMany(rows) {
@@ -210,7 +210,7 @@ async function copyMany(rows) {
 }
 
 function killerText(k) {
-  if (!k) return "none (level 1: no killer needed)";
+  if (!k) return "none (N = 1: no killer needed)";
   return `${k.name} (type ${k.type}, e(t) = ${k.eisenstein}, height ${k.height})`;
 }
 
@@ -261,7 +261,7 @@ async function main() {
   if (!state.levelsGiven) state.levels = [names.includes("5_6_1") ? "5_6_1" : names[0]];
   state.levels = state.levels.filter((l) => levels[l]);
   const lv = document.getElementById("levels");
-  lv.insertAdjacentHTML("afterbegin", `<span class="muted small">${kn("level", "Level")} (p.D.N):</span>`);
+  lv.insertAdjacentHTML("afterbegin", `<span class="muted small">${kn("triplet", "Triplet")} p.D.N:</span>`);
   for (const l of names) {
     lv.insertAdjacentHTML("beforeend", `<label><input type="checkbox" value="${l}"${state.levels.includes(l) ? " checked" : ""}>
       ${l.replaceAll("_", ".")} <span class="muted small">P${levels[l].precision} · ${levels[l].n_points}</span></label>`);
@@ -286,7 +286,7 @@ async function main() {
     selectableRows: true,
     selectableRowsRangeMode: "click",
     columns: columns(state.levels.length > 1, hasSupport),
-    placeholder: () => (state.levels.length ? "No values match the filters" : "Select one or more levels above"),
+    placeholder: () => (state.levels.length ? "No values match the filters" : "Select one or more triplets above"),
   });
   table.on("tableBuilt", () => {
     perfMark("table_built_ms", t);

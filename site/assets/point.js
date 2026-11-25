@@ -175,7 +175,7 @@ async function sectionRelated(pt, pair, catalog) {
     const lab = makeLabel({ ...L, Dco: L.Dcy, Dcy: L.Dco, i: L.j, j: L.i });
     swapped = `<a href="point.html?label=${encodeURIComponent(lab)}" class="mono">${esc(lab)}</a>`;
   }
-  const pairLink = `jvalues.html?level=${L.level}&Dco=${L.Dco}&Dcy=${L.Dcy}`;
+  const pairLink = `jvalues.html?triplet=${L.level}&Dco=${L.Dco}&Dcy=${L.Dcy}`;
   return `
   <h2>Related values</h2>
   <div class="kv">
@@ -207,7 +207,7 @@ function sectionProvenance(pt, pair, catalog) {
 }
 
 function killerText(k, short = false) {
-  if (!k) return short ? "none" : "none (no killer needed at this level)";
+  if (!k) return short ? "none" : "none (N = 1: no killer needed)";
   return short ? k.name : `${k.name} (type ${k.type}, e(t) = ${k.eisenstein}, height ${k.height})`;
 }
 
@@ -219,7 +219,7 @@ function properties(pt, pair) {
     <h2>Properties</h2>
     <dl>
       <dt>${kn("label", "Label")}</dt><dd class="mono small">${esc(pt.label)}</dd>
-      <dt>${kn("level", "level")}</dt><dd><a href="jvalues.html?level=${pair.level}">${pair.p}.${pair.D}.${pair.N}</a></dd>
+      <dt>${kn("triplet", "triplet")}</dt><dd><a href="jvalues.html?triplet=${pair.level}">${pair.p}.${pair.D}.${pair.N}</a></dd>
       <dt>${kn("quaternion_algebra", "D (algebra)")}</dt><dd><a href="precomputed.html#QA_${pair.D}">${pair.D}</a></dd>
       <dt>${kn("eichler_order", "N (level)")}</dt><dd><a href="precomputed.html#EO_${pair.D}_${pair.N}">${pair.N}</a></dd>
       <dt>${kn("discriminants", "D<sub>co</sub>")}</dt><dd>${pair.Dco}</dd>
@@ -234,7 +234,7 @@ function properties(pt, pair) {
       <dt>${kn("H", "H")}</dt><dd class="small"><span data-tex="${esc(polyTex(pair.H))}"></span></dd>
       <dt>${kn("killer", "killer")}</dt><dd class="small">${esc(killerText((pair.run || {}).killer, true))}</dd>
     </dl>
-    <p class="small muted">${kn("sc_label", "(S, c)")}: the primes where the orientation differs from embedding 0, and the narrow class${pair.labels && Object.values(pair.labels.cocycle || {}).some((x) => x) ? "" : " (not available for this level)"}.</p>
+    <p class="small muted">${kn("sc_label", "(S, c)")}: the primes where the orientation differs from embedding 0, and the narrow class${pair.labels && Object.values(pair.labels.cocycle || {}).some((x) => x) ? "" : " (not available for this triplet)"}.</p>
   </aside>`;
 }
 
@@ -251,7 +251,7 @@ async function main() {
   perfMark("fetch_ms", T0);
   document.title = `J Value ${label}`;
   const L = parseLabel(label);
-  document.getElementById("nav-jvalues").href = `jvalues.html?level=${L.level}`;
+  document.getElementById("nav-jvalues").href = `jvalues.html?triplet=${L.level}`;
   mainEl.innerHTML = `
     <div class="point-head">
       <h1>${esc(label)}</h1>

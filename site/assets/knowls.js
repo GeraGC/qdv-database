@@ -15,17 +15,17 @@ export const CATEGORIES = [
 
 export const KNOWLS = {
   // SETTING
-  level: {
-    cat: "setting", title: "Level p.D.N",
-    short: String.raw`A level is a triple $(p, D, N)$: a prime $p$, the discriminant $D$ of an indefinite quaternion algebra $B$ over $\mathbb{Q}$, and the level $N$ of an Eichler order $\mathcal{O}_N \subset B$ ($N = 1$: a maximal order), with $p \nmid DN$. It is written $p.D.N$, e.g. 5.6.1.`,
+  triplet: {
+    cat: "setting", title: "Triplet p.D.N",
+    short: String.raw`A triplet $(p, D, N)$: a prime $p$, the discriminant $D$ of an indefinite quaternion algebra $B$ over $\mathbb{Q}$, and the level $N$ of an Eichler order $\mathcal{O}_N \subset B$ ($N = 1$: a maximal order), with $p \nmid DN$. It is written $p.D.N$, e.g. 5.6.1.`,
     body: String.raw`<p>The computations use the $p$-arithmetic group $\Gamma$ of norm-one units of the $\mathbb{Z}[1/p]$-order $\mathcal{O}_N[1/p]$. It is built from the Fuchsian groups of the Eichler orders of levels $N$ and $Np$ (see <a href="knowl.html?id=sarith_group">S-arithmetic group</a>). The group acts on the $p$-adic upper half plane, and the J values are values of rigid meromorphic cocycles for $\Gamma$.</p>
-      <p>Each level has a <a href="knowl.html?id=candidate">candidate</a> entry in the precomputed data: the admissible discriminants, and the Hecke data used when $N > 1$ (see <a href="knowl.html?id=killer">Hecke killer</a>).</p>`,
+      <p>Each triplet has a <a href="knowl.html?id=candidate">candidate</a> entry in the precomputed data: the admissible discriminants, and the Hecke data used when $N > 1$ (see <a href="knowl.html?id=killer">Hecke killer</a>).</p>`,
     see: ["jvalue", "candidate", "quaternion_algebra", "eichler_order"], source: "datasets/Precomputed_data/candidates.json; level-computations-dev/dvk_computation.py",
     reviewed: false,
   },
   discriminants: {
     cat: "setting", title: "Discriminants Dco and Dcy",
-    short: String.raw`$D_{co}$ is the discriminant of the real quadratic order whose optimal embeddings define the cocycle; $D_{cy}$ that of the order whose embedding defines the cycle at which it is evaluated. Both are among the admissible discriminants of the level; they need not be fundamental.`,
+    short: String.raw`$D_{co}$ is the discriminant of the real quadratic order whose optimal embeddings define the cocycle; $D_{cy}$ that of the order whose embedding defines the cycle at which it is evaluated. Both are among the admissible discriminants of the triplet; they need not be fundamental.`,
     body: String.raw`<p>For a non-fundamental discriminant $D = d_K f^2$ the order of conductor $f$ in $K = \mathbb{Q}(\sqrt{d_K})$ is used, and the class field attached to it is the narrow ring class field of conductor $f$.</p>`,
     see: ["embeddings", "H", "candidate"], source: "level-computations-dev/dvk_wrappers.py (conjectural_field_poly)",
     reviewed: false,
@@ -40,16 +40,16 @@ export const KNOWLS = {
   sc_label: {
     cat: "setting", title: "(S, c) labels of embeddings",
     short: String.raw`The optimal embeddings of discriminant $\Delta$ into $\mathcal{O}_N$, up to conjugation by norm-one units, form a torsor under (local orientations) $\times\, \mathrm{Cl}^+(\Delta)$. The label $(S, c)$ of embedding $i$ records the primes $S \mid \operatorname{disc}(B) N$ where its orientation differs from embedding 0, and the position $c$ (in <code>bqf_ncgp_lexic</code>) of the narrow class taking $w_S \cdot \mathrm{emb}_0$ to $\mathrm{emb}_i$.`,
-    body: String.raw`<p>Written $(\emptyset, 0)$, $(\{2,3\}, 1)$, … The labels come from investigation (j) (Rickards' thesis, §4.4–4.5 and Thm 4.5.4), relative to embedding 0. They are available for the levels 5.6.1 and 3.10.1; for the other levels the column shows “–”.</p>`,
+    body: String.raw`<p>Written $(\emptyset, 0)$, $(\{2,3\}, 1)$, … The labels come from investigation (j) (Rickards' thesis, §4.4–4.5 and Thm 4.5.4), relative to embedding 0. They are available for the triplets 5.6.1 and 3.10.1; for the other triplets the column shows “–”.</p>`,
     see: ["embeddings"], source: "investigations/j_shimura_reciprocity/labels.py; level_computations/embedding_labels.py",
     reviewed: false,
   },
   killer: {
     cat: "setting", title: "Hecke killer",
-    short: String.raw`When $N > 1$ (and in general when $S_2(\Gamma_0(DN))^{D\text{-new}} \neq 0$), the cycle and the cocycle only make sense after their classes in $\Gamma_n^{ab} \otimes \mathbb{Q}$ and $H^1(\Gamma_n, \mathbb{Q})$ are killed by a Hecke operator $t$. The stored values are those of $t$ applied to the cycle and to the cocycle; the operator is shown for each level and session.`,
-    body: String.raw`<p>All exported levels with $N > 1$ use a killer of type B: a linear combination of operators $T_\ell$, $\ell \nmid DNp$, killing both classes. Types A (a polynomial in one $T_\ell$) and C (involving $U_\ell$ or $W_\ell$) were also considered.</p>
+    short: String.raw`When $N > 1$ (and in general when $S_2(\Gamma_0(DN))^{D\text{-new}} \neq 0$), the cycle and the cocycle only make sense after their classes in $\Gamma_n^{ab} \otimes \mathbb{Q}$ and $H^1(\Gamma_n, \mathbb{Q})$ are killed by a Hecke operator $t$. The stored values are those of $t$ applied to the cycle and to the cocycle; the operator is shown for each triplet and session.`,
+    body: String.raw`<p>All exported triplets with $N > 1$ use a killer of type B: a linear combination of operators $T_\ell$, $\ell \nmid DNp$, killing both classes. Types A (a polynomial in one $T_\ell$) and C (involving $U_\ell$ or $W_\ell$) were also considered.</p>
       <p>The <i>Eisenstein value</i> $e(t)$ is the eigenvalue of $t$ on the degree part ($\ell + 1$ for $T_\ell$); $t$ multiplies the divisor part by $e(t)$, so $e(t) \neq 0$. The <i>height</i> is a proxy for the growth of the heights of the J values ($h(T_\ell) = \ell + 1$, extended additively over the terms): values under $T_\ell$ are norms of values of conductor $\ell$.</p>`,
-    see: ["level", "jvalue"], source: "level_computations/hecke_killers.py; investigations/i_level_feasibility/probe.py (select)",
+    see: ["triplet", "jvalue"], source: "level_computations/hecke_killers.py; investigations/i_level_feasibility/probe.py (select)",
     reviewed: false,
   },
 
@@ -76,7 +76,7 @@ export const KNOWLS = {
   padic_field: {
     cat: "values", title: "p-adic field, precision and valuation",
     short: String.raw`$K = \mathbb{Q}_p(g)$, with $g$ a root of the stated quadratic polynomial (in Sage: <code>Qp(p, cap).extension(f)</code>, not the default modulus of <code>Qq</code>). A value is $J = p^{v}(u_0 + u_1 g) + O(p^{N})$ with $u_0 + u_1 g$ a unit: $v = v(J)$ is the valuation, $N$ the absolute precision, $N - v$ the relative precision.`,
-    body: String.raw`<p>The polynomial $f$ is the minimal polynomial of a generator of the maximal order of $\mathbb{Q}(\sqrt{D})$ for the first cocycle discriminant of the computation. The precision of the level (P700, P500, …) is the working precision; individual values carry slightly fewer digits.</p>`,
+    body: String.raw`<p>The polynomial $f$ is the minimal polynomial of a generator of the maximal order of $\mathbb{Q}(\sqrt{D})$ for the first cocycle discriminant of the computation. The precision of the triplet (P700, P500, …) is the working precision; individual values carry slightly fewer digits.</p>`,
     see: ["jvalue", "sage"], source: "level-computations-dev/dvk_computation.py (_init_padic_field); SCHEMA.md", reviewed: false,
   },
 
@@ -162,7 +162,7 @@ export const KNOWLS = {
   quaternion_algebra: {
     cat: "precomputed", title: "Quaternion algebra",
     short: String.raw`$B = \left(\frac{a, b}{\mathbb{Q}}\right)$ with $i^2 = a$, $j^2 = b$, $ij = -ji = k$, of discriminant $D$ (the product of the primes where $B$ ramifies). All algebras here are indefinite. Quaternions are written by their coordinates in $1, i, j, k$; the maximal order by a basis.`,
-    see: ["eichler_order", "level"], source: "datasets/Precomputed_data/quaternion_algebras.json", reviewed: false,
+    see: ["eichler_order", "triplet"], source: "datasets/Precomputed_data/quaternion_algebras.json", reviewed: false,
   },
   eichler_order: {
     cat: "precomputed", title: "Eichler order",
@@ -171,8 +171,8 @@ export const KNOWLS = {
   },
   candidate: {
     cat: "precomputed", title: "Candidate",
-    short: String.raw`A level $p.D.N$ prepared for computation: the prime $p$, the admissible discriminants up to a bound (the discriminants $\Delta$ for which the computation is possible, with optimal embeddings into $\mathcal{O}_N$), and the Hecke data for the killer.`,
-    see: ["level", "killer", "sarith_group"], source: "datasets/Precomputed_data/candidates.json; Scripts/candidate_generation.py", reviewed: false,
+    short: String.raw`A triplet $p.D.N$ prepared for computation: the prime $p$, the admissible discriminants up to a bound (the discriminants $\Delta$ for which the computation is possible, with optimal embeddings into $\mathcal{O}_N$), and the Hecke data for the killer.`,
+    see: ["triplet", "killer", "sarith_group"], source: "datasets/Precomputed_data/candidates.json; Scripts/candidate_generation.py", reviewed: false,
   },
   optimal_embedding: {
     cat: "precomputed", title: "Optimal embeddings",
@@ -186,15 +186,15 @@ export const KNOWLS = {
   },
   sarith_group: {
     cat: "precomputed", title: "S-arithmetic group",
-    short: String.raw`The $p$-arithmetic group of a level, stored through the Fuchsian groups of the orders of levels $N$ and $Np$, the element $w_p$, the Bruhat–Tits representatives and the $p$-adic splitting.`,
-    see: ["fuchsian_group", "level"], source: "darmonpoints-dev/darmonpoints/arithgroup_io.py", reviewed: false,
+    short: String.raw`The $p$-arithmetic group of a triplet, stored through the Fuchsian groups of the orders of levels $N$ and $Np$, the element $w_p$, the Bruhat–Tits representatives and the $p$-adic splitting.`,
+    see: ["fuchsian_group", "triplet"], source: "darmonpoints-dev/darmonpoints/arithgroup_io.py", reviewed: false,
   },
 
   // USING THE DATA
   label: {
     cat: "usage", title: "Labels of values",
-    short: String.raw`A value is labelled $p.D.N\text{-}D_{co}.D_{cy}\text{-}i.j\text{-}\mathrm{parity}$, e.g. <code>5.6.1-8.53-0.3-Je</code>: the level, the two discriminants, the two embedding positions and the parity. The label is the address of its page.`,
-    see: ["level", "discriminants", "embeddings", "parity"], source: "SCHEMA.md", reviewed: false,
+    short: String.raw`A value is labelled $p.D.N\text{-}D_{co}.D_{cy}\text{-}i.j\text{-}\mathrm{parity}$, e.g. <code>5.6.1-8.53-0.3-Je</code>: the triplet, the two discriminants, the two embedding positions and the parity. The label is the address of its page.`,
+    see: ["triplet", "discriminants", "embeddings", "parity"], source: "SCHEMA.md", reviewed: false,
   },
   sage: {
     cat: "usage", title: "Sage code",
@@ -204,7 +204,7 @@ export const KNOWLS = {
   },
   provenance: {
     cat: "usage", title: "Data version and provenance",
-    short: String.raw`The data come from a versioned dataset repository at a stated commit, exported at a pinned precision per level. Each value page lists the files it was read from, the computation session, the Hecke killer and the code commits. The format is documented in SCHEMA.md.`,
+    short: String.raw`The data come from a versioned dataset repository at a stated commit, exported at a pinned precision per triplet. Each value page lists the files it was read from, the computation session, the Hecke killer and the code commits. The format is documented in SCHEMA.md.`,
     see: ["sage"], source: "SCHEMA.md; exporter/levels.json", reviewed: false,
   },
 };

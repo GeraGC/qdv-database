@@ -3,12 +3,12 @@
 This document describes the JSON files that `exporter/` writes from the datasets (`gmx-points-dataset`) and that
 the static site reads. The files depend neither on Sage nor on the library: every number is stored exactly, and the
 Sage snippets rebuild the values in a fresh Sage session. Version 2 covers the **single J values (PS = 1)** of every
-level, with their recognitions, and the precomputed data (quaternion algebras, orders, candidates, embeddings) with the
+triplet $p.D.N$, with their recognitions, and the precomputed data (quaternion algebras, orders, candidates, embeddings) with the
 stored arithmetic groups.
 
 **Changes from version 1** (2026-11-25):
-- all levels, each at the precision pinned in `exporter/levels.json`;
-- the p-adic field is recorded per pair (`padic_field`); the level entry has `padic_fields`;
+- all triplets, each at the precision pinned in `exporter/levels.json`;
+- the p-adic field is recorded per pair (`padic_field`); the triplet entry has `padic_fields`;
 - pair files carry `run` (killer, manifest), and points carry `lindep_support`; the Sage line can define `f_support`;
 - two new index columns, `support` and `field_src`; the `primes` and `field` columns fall back to the support lindep;
 - `precomputed/tree.json` and `arith_groups/` are new.
@@ -17,7 +17,7 @@ stored arithmetic groups.
 
 ```
 data/
-  catalog.json                              data kinds, levels and the provenance of their latest export
+  catalog.json                              data kinds, triplets and the provenance of their latest export
   jvalues/<p_D_N>/index.json                one row of short fields per point (used for filtering)
   jvalues/<p_D_N>/pairs/<Dco>_<Dcy>.json    the full records of one (Dco, Dcy) pair
   manifests/export_<p_D_N>_<stamp>.json     provenance, sha256 of every input file, counts and timings of a run
@@ -25,9 +25,13 @@ data/
   arith_groups/<fuchsian|sarith>/<id>/<grouptype>.json.gz   the stored groups, unchanged (darmonpoints arithgroup_io)
 ```
 
-The pinned precision of each level is in `exporter/levels.json` (under git), with the reason for the choice.
+The pinned precision of each triplet is in `exporter/levels.json` (under git), with the reason for the choice.
 
-The site loads `catalog.json`, then the index of the levels selected. It loads a pair file only to show a point.
+The site loads `catalog.json`, then the index of the triplets selected.
+
+The triplet $p.D.N$ is called a *triplet* rather than a level, to avoid confusion with the level $N$ of the
+Eichler order. The JSON keys keep the historical name `level` (value `p_D_N`); the site's URL parameter is `triplet`
+(`jvalues.html?triplet=5_6_1,7_6_5`). It loads a pair file only to show a point.
 
 ## Points and labels
 
@@ -136,7 +140,7 @@ exported value has `s = 1`, and `tests/check_export.py` checks the formulas on t
   - the source `file`.
 - `run` is read from the manifest of the J values session (the public build drops host names and makes paths
   relative, `scripts/build_site.py`). `killer` is the Hecke operator applied to the cycle and
-  the cocycle (`null` at level 1; otherwise `{type, name, terms, eisenstein, height, source}`, see
+  the cocycle (`null` when N = 1; otherwise `{type, name, terms, eisenstein, height, source}`, see
   `level_computations/hecke_killers.py`).
 - `recognition_files` gives, per cocycle embedding and parity, the source file and its generic data, for
   `lindeps`, `algdeps`, `in_field`, `certificates` and `lindeps_support`. The generic data include the method, the code commit, the
@@ -240,4 +244,4 @@ The manifest of each run adds the sha256 of every input file.
 - values at other precisions;
 - the rising cycle discriminants (P100, investigation (z));
 - the Hecke-translated values;
-- the (S, c) labels at levels N > 1 (investigation (j) has them only on an unmerged branch).
+- the (S, c) labels for N > 1 (investigation (j) has them only on an unmerged branch).

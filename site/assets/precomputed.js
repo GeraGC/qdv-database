@@ -23,8 +23,8 @@ function groupBlock(g) {
 }
 
 function candidateBlock(c) {
-  const link = c.jvalues_exported ? ` · <a href="jvalues.html?level=${c.level}">J values</a>` : ' · <span class="muted">no J values exported</span>';
-  return `<details id="${c.id}"><summary>${kn("candidate", "Candidate")} p = ${c.p} · level ${c.level.replaceAll("_", ".")}${link}<span class="id">${c.id}</span></summary>
+  const link = c.jvalues_exported ? ` · <a href="jvalues.html?triplet=${c.level}">J values</a>` : ' · <span class="muted">no J values exported</span>';
+  return `<details id="${c.id}"><summary>${kn("candidate", "Candidate")} p = ${c.p} · triplet ${c.level.replaceAll("_", ".")}${link}<span class="id">${c.id}</span></summary>
     <div class="leaf"><div class="kv">
       <div>admissible discriminants (bound ${c.bound})</div><div>${chips(c.admissible_disc || [])}</div>
       <div>Hecke data</div><div class="mono small">${esc(c.hecke_data)}</div>
