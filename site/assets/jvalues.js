@@ -24,12 +24,16 @@ const CERT_CLASS = { agree: "ok", single: "info", conflict: "bad", none: "" };
 const FIELD_CLASS = { generating: "ok", in_H: "ok", trivial: "", outside_H: "warn", undecided: "bad" };
 const LINDEP_CLASS = { ok: "ok", unverified: "bad", none: "" };
 
-const state = { levels: [], filters: {}, search: "", primes: "" };
+const state = { levels: [], levelsGiven: false, filters: {}, search: "", primes: "" };
 let table = null;
 let allRows = [];
+let catalog = null;
+let layoutKey = "";
 
 function readURL() {
   const q = new URLSearchParams(location.search);
+  // "level" absent: first visit, default level; "level=" (empty): no level selected on purpose
+  state.levelsGiven = q.has("level");
   state.levels = (q.get("level") || "").split(",").filter(Boolean);
   for (const f of FILTERS) if (q.has(f.key)) state.filters[f.key] = q.get(f.key);
   state.search = q.get("q") || "";
@@ -38,7 +42,7 @@ function readURL() {
 
 function writeURL() {
   const q = new URLSearchParams();
-  if (state.levels.length) q.set("level", state.levels.join(","));
+  q.set("level", state.levels.join(","));
   for (const [k, v] of Object.entries(state.filters)) if (v !== "") q.set(k, v);
   if (state.search) q.set("q", state.search);
   if (state.primes) q.set("primes", state.primes);
@@ -74,7 +78,11 @@ function buildFilters() {
   for (const f of FILTERS) {
     const opts = optionValues(f);
     const hasNull = allRows.some((r) => r[f.key] === null || r[f.key] === undefined);
-    if (!opts.length && !(f.key in state.filters)) continue; // e.g. support lindeps outside 7.6.5
+    if (!opts.length && !(f.key in state.filters)) continue; // e.g. support lindeps outside 7.6.5, or no level
+    // a value that the selected levels do not have (e.g. Dco=8 after switching to 7.6.5) is dropped
+    if (f.key in state.filters && state.filters[f.key] !== "null" && !opts.some((v) => String(v) === state.filters[f.key])) {
+      delete state.filters[f.key];
+    }
     const current = state.filters[f.key] ?? "";
     const show = f.show || ((v) => String(v));
     box.insertAdjacentHTML("beforeend", `<div class="filter"><span>${kn(f.knowl, f.label)}</span><select data-key="${f.key}" aria-label="${esc(f.key)}">
@@ -216,14 +224,41 @@ function levelInfo(levels) {
   }).join("");
 }
 
+/** Load the indexes of the selected levels (cached) and show them, without reloading the page. */
+async function showLevels() {
+  const levels = catalog.kinds.jvalues.levels;
+  document.querySelectorAll("#levels input[type=checkbox]").forEach((cb) => { cb.checked = state.levels.includes(cb.value); });
+  levelInfo(levels);
+  allRows = await loadLevels(catalog);
+  buildFilters();
+  const hasSupport = allRows.some((r) => r.support !== null && r.support !== undefined);
+  const key = `${state.levels.length > 1}/${hasSupport}`;
+  if (!table) return { hasSupport, key };
+  if (key !== layoutKey) {
+    table.setColumns(columns(state.levels.length > 1, hasSupport));
+    layoutKey = key;
+  }
+  await table.setData(allRows);
+  table.setFilter(rowMatches);
+  writeURL();
+  updateStatus();
+  return { hasSupport, key };
+}
+
+async function setLevels(names) {
+  state.levels = names;
+  writeURL();
+  await showLevels();
+}
+
 async function main() {
   initKnowls();
   renderFooter();
   readURL();
-  const catalog = await getCatalog();
+  catalog = await getCatalog();
   const levels = catalog.kinds.jvalues.levels;
   const names = Object.keys(levels);
-  if (!state.levels.length) state.levels = [names.includes("5_6_1") ? "5_6_1" : names[0]];
+  if (!state.levelsGiven) state.levels = [names.includes("5_6_1") ? "5_6_1" : names[0]];
   state.levels = state.levels.filter((l) => levels[l]);
   const lv = document.getElementById("levels");
   lv.insertAdjacentHTML("afterbegin", `<span class="muted small">${kn("level", "Level")} (p.D.N):</span>`);
@@ -231,16 +266,15 @@ async function main() {
     lv.insertAdjacentHTML("beforeend", `<label><input type="checkbox" value="${l}"${state.levels.includes(l) ? " checked" : ""}>
       ${l.replaceAll("_", ".")} <span class="muted small">P${levels[l].precision} · ${levels[l].n_points}</span></label>`);
   }
-  lv.querySelectorAll("input").forEach((cb) => cb.addEventListener("change", () => {
-    state.levels = [...lv.querySelectorAll("input:checked")].map((x) => x.value);
-    writeURL();
-    location.reload();
-  }));
-  levelInfo(levels);
+  lv.insertAdjacentHTML("beforeend", `<span class="level-shortcuts"><button class="linkbtn" id="levels-all">all</button> ·
+    <button class="linkbtn" id="levels-none">none</button></span>`);
+  lv.querySelectorAll("input[type=checkbox]").forEach((cb) => cb.addEventListener("change", () =>
+    setLevels([...lv.querySelectorAll("input[type=checkbox]:checked")].map((x) => x.value))));
+  document.getElementById("levels-all").addEventListener("click", () => setLevels(names));
+  document.getElementById("levels-none").addEventListener("click", () => setLevels([]));
 
-  allRows = await loadLevels(catalog);
-  buildFilters();
-  const hasSupport = allRows.some((r) => r.support !== null && r.support !== undefined);
+  const { hasSupport, key } = await showLevels();
+  layoutKey = key;
   const t = performance.now();
   table = new Tabulator("#table", {
     data: allRows,
@@ -252,7 +286,7 @@ async function main() {
     selectableRows: true,
     selectableRowsRangeMode: "click",
     columns: columns(state.levels.length > 1, hasSupport),
-    placeholder: "No values match the filters",
+    placeholder: () => (state.levels.length ? "No values match the filters" : "Select one or more levels above"),
   });
   table.on("tableBuilt", () => {
     perfMark("table_built_ms", t);

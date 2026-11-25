@@ -28,7 +28,7 @@ ALLOW = [
     ("scripts/build_site.py", None), ("scripts/package_release.py", None), ("scripts/make_public.py", None),
     ("scripts/make_pages.sh", None),
     ("tests/check_export.py", None), ("tests/check_knowls.py", None), ("tests/check_public.py", None),
-    ("tests/site_check.sh", None), ("tests/site_timings.py", None),
+    ("tests/site_check.sh", None), ("tests/site_timings.py", None), ("tests/site_levels.py", None),
     ("site/*", None), ("site/**/*", None),
     ("results/check_export_*.json", None), ("results/site_selftest.json", None),
 ]
