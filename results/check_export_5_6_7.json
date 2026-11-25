@@ -1,0 +1,21 @@
+{
+ "level": "5_6_7",
+ "precision": 500,
+ "n_points": 4096,
+ "stats": {
+  "parity_checked": 4096,
+  "snippet_checked": 4096,
+  "lindeps_checked": 256,
+  "in_field_checked": 256
+ },
+ "precision_minus_cancelled_digits": {
+  "lindeps:0": 256
+ },
+ "certificate_status": {
+  "none": 3840,
+  "agree": 256
+ },
+ "failures": {},
+ "n_failures": {},
+ "seconds": 6.3
+}

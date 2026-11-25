@@ -1,0 +1,23 @@
+{
+ "level": "5_6_1",
+ "precision": 700,
+ "n_points": 1824,
+ "stats": {
+  "parity_checked": 1824,
+  "snippet_checked": 1824,
+  "lindeps_checked": 1436,
+  "in_field_checked": 1416,
+  "lindeps_uncertified_root_None": 4
+ },
+ "precision_minus_cancelled_digits": {
+  "lindeps:0": 1436
+ },
+ "certificate_status": {
+  "agree": 1412,
+  "none": 384,
+  "single": 28
+ },
+ "failures": {},
+ "n_failures": {},
+ "seconds": 7.0
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explanation</title>
+<meta name="description" content="Explanation of a term used in the database.">
+<link rel="stylesheet" href="vendor/katex-0.16.47/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Darmon–Vonk data</a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="jvalues.html">J values</a>
+    <a href="precomputed.html">Algebras and groups</a>
+    <a href="help.html" aria-current="page">Help</a>
+  </nav>
+</header>
+<main class="knowl-page" id="main"><p class="muted">Loading…</p></main>
+<footer class="site-footer"><span id="footer-version">…</span><span><a href="help.html">All explanations</a></span></footer>
+<script src="vendor/katex-0.16.47/katex.min.js"></script>
+<script type="module">
+import { KNOWLS, CATEGORIES } from "./assets/knowls.js";
+import { renderMath, initKnowls } from "./assets/knowl-ui.js";
+import { renderFooter, esc } from "./assets/common.js";
+renderFooter();
+initKnowls();
+const id = new URLSearchParams(location.search).get("id");
+const k = KNOWLS[id];
+const main = document.getElementById("main");
+if (!k) {
+  main.innerHTML = `<p class="error">No explanation with id <code>${esc(id)}</code>. See <a href="help.html">all explanations</a>.</p>`;
+} else {
+  document.title = k.title;
+  const cat = (CATEGORIES.find(([c]) => c === k.cat) || [, ""])[1];
+  const see = (k.see || []).filter((s) => KNOWLS[s]).map((s) => `<a href="knowl.html?id=${s}">${esc(KNOWLS[s].title)}</a>`).join(" · ");
+  main.innerHTML = `
+    <p class="muted small"><a href="help.html">Help</a> › ${esc(cat)}</p>
+    <h1>${esc(k.title)} ${k.reviewed ? "" : '<span class="badge warn" title="Not yet reviewed by the authors">draft</span>'}</h1>
+    <div>${renderMath(`<p>${k.short}</p>`)}</div>
+    <div>${k.body ? renderMath(k.body) : ""}</div>
+    ${see ? `<h2>See also</h2><p>${see}</p>` : ""}
+    ${k.source ? `<p class="source">Source of the definition: <code>${esc(k.source)}</code></p>` : ""}
+    <p class="source">Identifier: <code>${esc(id)}</code></p>`;
+}
+</script>
+</body>
+</html>

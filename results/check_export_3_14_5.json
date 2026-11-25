@@ -1,0 +1,22 @@
+{
+ "level": "3_14_5",
+ "precision": 500,
+ "n_points": 2432,
+ "stats": {
+  "parity_checked": 2432,
+  "snippet_checked": 2432,
+  "lindeps_checked": 1024,
+  "in_field_checked": 460
+ },
+ "precision_minus_cancelled_digits": {
+  "lindeps:0": 1024
+ },
+ "certificate_status": {
+  "agree": 556,
+  "single": 468,
+  "none": 1408
+ },
+ "failures": {},
+ "n_failures": {},
+ "seconds": 8.1
+}

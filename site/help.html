@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help and Definitions</title>
+<meta name="description" content="Explanations of the terms, filters and columns of the database.">
+<link rel="stylesheet" href="vendor/katex-0.16.47/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Darmon–Vonk data</a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="jvalues.html">J values</a>
+    <a href="precomputed.html">Algebras and groups</a>
+    <a href="help.html" aria-current="page">Help</a>
+  </nav>
+</header>
+<main class="knowl-page">
+  <h1>Help</h1>
+  <p class="lead">What each column, filter and section of the database means. The same explanations open when you
+    click a dotted term or an ⓘ anywhere on the site.</p>
+  <p class="note" id="draft-note" hidden>These explanations are drafts, pending review by the authors.</p>
+  <div id="list"><p class="muted">Loading…</p></div>
+</main>
+<footer class="site-footer"><span id="footer-version">…</span><span id="footer-schema">Data format: SCHEMA.md</span></footer>
+<script src="vendor/katex-0.16.47/katex.min.js"></script>
+<script type="module">
+import { KNOWLS, CATEGORIES } from "./assets/knowls.js";
+import { renderMath } from "./assets/knowl-ui.js";
+import { renderFooter, esc } from "./assets/common.js";
+renderFooter();
+if (Object.values(KNOWLS).some((k) => !k.reviewed)) document.getElementById("draft-note").hidden = false;
+document.getElementById("list").innerHTML = CATEGORIES.map(([cat, name]) => {
+  const items = Object.entries(KNOWLS).filter(([, k]) => k.cat === cat);
+  return `<h2 id="${cat}">${esc(name)}</h2><ul class="help-list">${items.map(([id, k]) =>
+    `<li id="k-${id}"><a class="t" href="knowl.html?id=${id}">${esc(k.title)}</a><div class="s">${renderMath(k.short)}</div></li>`).join("")}</ul>`;
+}).join("");
+</script>
+</body>
+</html>

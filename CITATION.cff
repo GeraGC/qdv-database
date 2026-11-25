@@ -1,0 +1,25 @@
+# Citation metadata. GitHub shows it as "Cite this repository"; Zenodo reads it for the archive of a release.
+# Filled in at each release: version, date-released, doi (scripts/build_site.py reads the authors and the title).
+cff-version: 1.2.0
+message: "If you use these data, please cite the release you used (see the DOI on the site)."
+type: dataset
+title: "QDV database: quaternionic Darmon–Vonk J values and their algebraic recognitions"
+authors:
+  - family-names: "Gonzalo Calbetó"
+    given-names: "Gerard"
+    orcid: "https://orcid.org/0009-0003-1859-4951"
+version: "unreleased"
+# date-released: "2026-MM-DD"
+# doi: "10.5281/zenodo.NNNNNNN"
+repository-code: "https://github.com/GeraGC/qdv-database"
+url: "https://geragc.github.io/qdv-database/"
+license:
+  - CC-BY-4.0
+  - MIT
+keywords:
+  - Darmon–Vonk
+  - rigid meromorphic cocycles
+  - real multiplication
+  - quaternion algebras
+  - p-adic numbers
+  - algebraic recognition

@@ -1,0 +1,12 @@
+{
+ "description": "Pinned precision of the exported J values per level (decided 2026-11-25, phase 3): the highest precision with one session per cocycle discriminant and PS=1 recognitions (lindep, algdep, in-field, certificates) for every cocycle embedding.",
+ "levels": {
+  "3_10_1": {"precision": 700, "reason": "highest precision; P200/P400 superseded"},
+  "3_10_7": {"precision": 500, "reason": "highest precision; P200/P400 superseded"},
+  "3_14_5": {"precision": 500, "reason": "highest precision; P200/P400 superseded"},
+  "5_6_1": {"precision": 700, "reason": "highest precision; P100 (rising discriminants, investigation (z)), P200, P400 not exported"},
+  "5_6_7": {"precision": 500, "reason": "highest precision; P200/P400 superseded"},
+  "5_14_3": {"precision": 500, "reason": "highest precision; P200 superseded"},
+  "7_6_5": {"precision": 500, "reason": "highest precision; P200 and P300 not exported; support lindeps at P500"}
+ }
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Self-Test</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+  <h1>Self-test of the site code</h1>
+  <p class="muted">Checks the JavaScript helpers against the export of one level (selftest.html?level=5_6_1). The
+    result is written below as JSON; tests/site_selftest.sh reads it from a headless browser.</p>
+  <pre id="result" class="bigval">running…</pre>
+</main>
+<script type="module">
+import { getCatalog, getJSON, parseLabel, makeLabel, sageParts, bulkSage, padicTerms, pairPath } from "./assets/common.js";
+
+async function run() {
+  const t0 = performance.now();
+  const cat = await getCatalog();
+  const levels = cat.kinds.jvalues.levels;
+  const want = new URLSearchParams(location.search).get("level") || "all";
+  const levelNames = want === "all" ? Object.keys(levels) : [want];
+  const failures = {};
+  const fail = (k, x) => { (failures[k] ||= []).push(x); };
+  const perLevel = {};
+  let nPoints = 0, nRows = 0, bulkLabels = 0, bulkLines = 0;
+  for (const level of levelNames) {
+  const idx = await getJSON(levels[level].index);
+  const cols = idx.columns;
+  const rows = idx.rows.map((r) => Object.fromEntries(cols.map((c, k) => [c, r[k]])));
+  const counts = { cert: {}, field: {}, lindep: {}, parity: {}, support: {} };
+  nRows += rows.length;
+  for (const r of rows) {
+    const L = parseLabel(r.label);
+    if (!L || makeLabel(L) !== r.label || L.Dco !== r.Dco || L.Dcy !== r.Dcy || L.i !== r.i || L.j !== r.j || L.parity !== r.parity)
+      fail("label_round_trip", r.label);
+    for (const k of Object.keys(counts)) counts[k][r[k]] = (counts[k][r[k]] || 0) + 1;
+  }
+  // every point of every pair: the Sage line splits into the expected statements
+  const someLabels = [];
+  for (const pr of levels[level].pairs) {
+    const pair = await getJSON(pairPath(level, pr.Dco, pr.Dcy));
+    for (const pt of pair.points) {
+      nPoints++;
+      const s = sageParts(pt.sage);
+      if (!s.J || !s.J.includes("add_bigoh(")) fail("sage_J", pt.label);
+      if (!s.field.startsWith("R.<x> = QQ[]; K.<g> = Qp(")) fail("sage_field", pt.label);
+      if (!!s.f !== !!pt.lindep) fail("sage_f", pt.label);
+      if (!!s.fSupport !== !!pt.lindep_support) fail("sage_f_support", pt.label);
+      if (s.fSupport && s.fSupport !== pt.lindep_support.ff) fail("sage_f_support_text", pt.label);
+      if (s.f && s.f !== pt.lindep.ff) fail("sage_f_text", pt.label);
+      if (!s.H || s.H.replace(/\)$/, "") !== pair.H) fail("sage_H", pt.label);
+      if (!s.comment.startsWith(pt.label)) fail("sage_comment", pt.label);
+      // the base-p digits rebuild u_0, u_1
+      const P = BigInt(pair.p);
+      const { terms } = padicTerms(pt.J, pair.p, pt.J.prec - pt.J.v);
+      const rebuilt = [0n, 0n];
+      for (const { e, d } of terms) d.forEach((x, k) => { rebuilt[k] += x * P ** BigInt(e - pt.J.v); });
+      if (rebuilt.some((x, k) => x !== BigInt(pt.J.u[k]))) fail("padic_digits", pt.label);
+      if (someLabels.length < 40 && pt.j === 0) someLabels.push(pt.label);
+    }
+  }
+  // the bulk block reuses the verified statements verbatim
+  const block = await bulkSage(someLabels, "selftest");
+  const lines = block.split("\n");
+  for (const label of someLabels) {
+    const L = parseLabel(label);
+    const pair = await getJSON(pairPath(L.level, L.Dco, L.Dcy));
+    const pt = pair.points.find((x) => x.label === label);
+    if (!lines.includes(`J['${label}'] = ${sageParts(pt.sage).J}`)) fail("bulk_J", label);
+  }
+  const hLines = lines.filter((x) => x.startsWith("H[")).length;
+  const pairsInBulk = new Set(someLabels.map((l) => l.split("-")[1])).size;
+  if (hLines !== pairsInBulk) fail("bulk_H_once_per_pair", `${hLines} H lines for ${pairsInBulk} pairs`);
+  perLevel[level] = { rows: rows.length, counts };
+  bulkLabels += someLabels.length; bulkLines += lines.length;
+  }
+  return { levels: levelNames, rows: nRows, points: nPoints, per_level: perLevel, bulk_labels: bulkLabels, bulk_lines: bulkLines,
+           failures, n_failures: Object.values(failures).reduce((s, x) => s + x.length, 0),
+           ms: Math.round(performance.now() - t0) };
+}
+run().then((r) => { document.getElementById("result").textContent = JSON.stringify(r, null, 1); document.body.dataset.done = "1"; })
+  .catch((e) => { document.getElementById("result").textContent = JSON.stringify({ error: String(e) }); document.body.dataset.done = "1"; });
+</script>
+</body>
+</html>

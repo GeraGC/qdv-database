@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algebras and Groups</title>
+<meta name="description" content="Quaternion algebras, Eichler orders, candidates, optimal embeddings and the stored arithmetic groups.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Darmon–Vonk data</a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="jvalues.html">J values</a>
+    <a href="precomputed.html" aria-current="page">Algebras and groups</a>
+    <a href="help.html">Help</a>
+  </nav>
+</header>
+<main>
+  <h1>Quaternion algebras and groups</h1>
+  <p class="lead">The input data of the computations: the quaternion algebras, their Eichler orders, the candidate
+    levels, the optimal embeddings and the stored arithmetic groups. Click a dotted term for its meaning.</p>
+  <div class="tree-tools">
+    <button class="btn" id="expand">Expand algebras and orders</button>
+    <button class="btn" id="collapse">Collapse all</button>
+  </div>
+  <div class="tree" id="tree"><p class="muted">Loading…</p></div>
+  <div id="perf" hidden></div>
+</main>
+<footer class="site-footer">
+  <span id="tree-version">…</span>
+  <span>Stored groups: exact data (darmonpoints arithgroup_io), downloadable as .json.gz</span>
+</footer>
+<script type="module" src="assets/precomputed.js"></script>
+</body>
+</html>

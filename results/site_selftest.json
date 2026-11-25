@@ -1,0 +1,211 @@
+{
+ "levels": [
+  "3_10_1",
+  "3_10_7",
+  "3_14_5",
+  "5_6_1",
+  "5_6_7",
+  "5_14_3",
+  "7_6_5"
+ ],
+ "rows": 13120,
+ "points": 13120,
+ "per_level": {
+  "3_10_1": {
+   "rows": 1184,
+   "counts": {
+    "cert": {
+     "agree": 960,
+     "none": 192,
+     "single": 32
+    },
+    "field": {
+     "trivial": 60,
+     "outside_H": 884,
+     "generating": 48,
+     "null": 192
+    },
+    "lindep": {
+     "ok": 992,
+     "none": 192
+    },
+    "parity": {
+     "Jp": 296,
+     "Jm": 296,
+     "Je": 296,
+     "Jo": 296
+    },
+    "support": {
+     "null": 1184
+    }
+   }
+  },
+  "3_10_7": {
+   "rows": 2304,
+   "counts": {
+    "cert": {
+     "agree": 256,
+     "none": 2048
+    },
+    "field": {
+     "trivial": 256,
+     "null": 2048
+    },
+    "lindep": {
+     "ok": 256,
+     "none": 2048
+    },
+    "parity": {
+     "Jp": 576,
+     "Jm": 576,
+     "Je": 576,
+     "Jo": 576
+    },
+    "support": {
+     "null": 2304
+    }
+   }
+  },
+  "3_14_5": {
+   "rows": 2432,
+   "counts": {
+    "cert": {
+     "none": 1408,
+     "agree": 556,
+     "single": 468
+    },
+    "field": {
+     "null": 1408,
+     "trivial": 1024
+    },
+    "lindep": {
+     "none": 896,
+     "ok": 1024,
+     "null": 512
+    },
+    "parity": {
+     "Jp": 608,
+     "Jm": 608,
+     "Je": 608,
+     "Jo": 608
+    },
+    "support": {
+     "null": 2432
+    }
+   }
+  },
+  "5_6_1": {
+   "rows": 1824,
+   "counts": {
+    "cert": {
+     "agree": 1412,
+     "none": 384,
+     "single": 28
+    },
+    "field": {
+     "in_H": 268,
+     "outside_H": 916,
+     "trivial": 56,
+     "generating": 200,
+     "null": 384
+    },
+    "lindep": {
+     "ok": 1436,
+     "none": 384,
+     "unverified": 4
+    },
+    "parity": {
+     "Jp": 456,
+     "Jm": 456,
+     "Je": 456,
+     "Jo": 456
+    },
+    "support": {
+     "null": 1824
+    }
+   }
+  },
+  "5_6_7": {
+   "rows": 4096,
+   "counts": {
+    "cert": {
+     "agree": 256,
+     "none": 3840
+    },
+    "field": {
+     "trivial": 256,
+     "null": 3840
+    },
+    "lindep": {
+     "ok": 256,
+     "none": 3840
+    },
+    "parity": {
+     "Jp": 1024,
+     "Jm": 1024,
+     "Je": 1024,
+     "Jo": 1024
+    },
+    "support": {
+     "null": 4096
+    }
+   }
+  },
+  "5_14_3": {
+   "rows": 640,
+   "counts": {
+    "cert": {
+     "none": 640
+    },
+    "field": {
+     "null": 640
+    },
+    "lindep": {
+     "none": 640
+    },
+    "parity": {
+     "Jp": 160,
+     "Jm": 160,
+     "Je": 160,
+     "Jo": 160
+    },
+    "support": {
+     "null": 640
+    }
+   }
+  },
+  "7_6_5": {
+   "rows": 640,
+   "counts": {
+    "cert": {
+     "agree": 448,
+     "none": 192
+    },
+    "field": {
+     "in_H": 104,
+     "generating": 248,
+     "outside_H": 96,
+     "null": 192
+    },
+    "lindep": {
+     "none": 640
+    },
+    "parity": {
+     "Jp": 160,
+     "Jm": 160,
+     "Je": 160,
+     "Jo": 160
+    },
+    "support": {
+     "ok": 448,
+     "none": 192
+    }
+   }
+  }
+ },
+ "bulk_labels": 280,
+ "bulk_lines": 523,
+ "failures": {},
+ "n_failures": 0,
+ "ms": 1220
+}
