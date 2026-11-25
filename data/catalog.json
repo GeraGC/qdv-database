@@ -1,0 +1,2367 @@
+{
+ "schema_version": 2,
+ "kinds": {
+  "jvalues": {
+   "title": "J values",
+   "levels": {
+    "3_10_1": {
+     "p": 3,
+     "D": 10,
+     "N": 1,
+     "precision": 700,
+     "padic_field": {
+      "p": 3,
+      "cap": 700,
+      "modulus": "x^2 - x - 1",
+      "gen": "g"
+     },
+     "padic_fields": [
+      {
+       "p": 3,
+       "cap": 700,
+       "modulus": "x^2 - x - 1",
+       "gen": "g"
+      }
+     ],
+     "sessions": {
+      "5": "121126_195115",
+      "8": "121126_195133",
+      "53": "121126_195137",
+      "77": "121126_195143",
+      "92": "121126_195150"
+     },
+     "runs": {
+      "5": {
+       "manifest": "manifests/level_3_10_1_700_121126_195115.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T19:51:54",
+       "code": {
+        "level-computations-dev": {
+         "commit": "7864b2122a0e5742b1818828990a823a00198e49",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "8": {
+       "manifest": "manifests/level_3_10_1_700_121126_195133.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T19:51:54",
+       "code": {
+        "level-computations-dev": {
+         "commit": "7864b2122a0e5742b1818828990a823a00198e49",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "53": {
+       "manifest": "manifests/level_3_10_1_700_121126_195137.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T19:51:54",
+       "code": {
+        "level-computations-dev": {
+         "commit": "7864b2122a0e5742b1818828990a823a00198e49",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "77": {
+       "manifest": "manifests/level_3_10_1_700_121126_195143.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T19:51:54",
+       "code": {
+        "level-computations-dev": {
+         "commit": "7864b2122a0e5742b1818828990a823a00198e49",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "92": {
+       "manifest": "manifests/level_3_10_1_700_121126_195150.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T19:51:54",
+       "code": {
+        "level-computations-dev": {
+         "commit": "7864b2122a0e5742b1818828990a823a00198e49",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      }
+     },
+     "killers": [
+      "null"
+     ],
+     "precision_reason": "highest precision; P200/P400 superseded",
+     "discs": [
+      5,
+      8,
+      53,
+      77,
+      92
+     ],
+     "n_points": 1184,
+     "pairs": [
+      {
+       "Dco": 5,
+       "Dcy": 8,
+       "n_points": 16,
+       "H": "x^4 - 26*x^2 + 9",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/5_8.json",
+       "bytes": 89328
+      },
+      {
+       "Dco": 5,
+       "Dcy": 53,
+       "n_points": 32,
+       "H": "x^4 - 116*x^2 + 2304",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/5_53.json",
+       "bytes": 152619
+      },
+      {
+       "Dco": 5,
+       "Dcy": 77,
+       "n_points": 64,
+       "H": "x^8 - 2*x^6 + 143*x^4 - 1682*x^2 + 5041",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/5_77.json",
+       "bytes": 350121
+      },
+      {
+       "Dco": 5,
+       "Dcy": 92,
+       "n_points": 32,
+       "H": "x^8 - 384*x^6 + 52392*x^4 - 2951936*x^2 + 60279696",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/5_92.json",
+       "bytes": 187080
+      },
+      {
+       "Dco": 8,
+       "Dcy": 5,
+       "n_points": 16,
+       "H": "x^4 - 26*x^2 + 9",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/8_5.json",
+       "bytes": 89326
+      },
+      {
+       "Dco": 8,
+       "Dcy": 53,
+       "n_points": 32,
+       "H": "x^4 - 122*x^2 + 2025",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/8_53.json",
+       "bytes": 153304
+      },
+      {
+       "Dco": 8,
+       "Dcy": 77,
+       "n_points": 64,
+       "H": "x^8 - 14*x^6 + 323*x^4 - 4382*x^2 + 18769",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/8_77.json",
+       "bytes": 422321
+      },
+      {
+       "Dco": 8,
+       "Dcy": 92,
+       "n_points": 32,
+       "H": "x^8 - 396*x^6 + 53718*x^4 - 2826668*x^2 + 52664049",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/8_92.json",
+       "bytes": 178895
+      },
+      {
+       "Dco": 53,
+       "Dcy": 5,
+       "n_points": 32,
+       "H": "x^4 - 116*x^2 + 2304",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/53_5.json",
+       "bytes": 177201
+      },
+      {
+       "Dco": 53,
+       "Dcy": 8,
+       "n_points": 32,
+       "H": "x^4 - 122*x^2 + 2025",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/53_8.json",
+       "bytes": 180787
+      },
+      {
+       "Dco": 53,
+       "Dcy": 77,
+       "n_points": 128,
+       "H": "x^8 - 194*x^6 + 15983*x^4 - 654002*x^2 + 10804369",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/53_77.json",
+       "bytes": 496250
+      },
+      {
+       "Dco": 53,
+       "Dcy": 92,
+       "n_points": 64,
+       "H": "x^8 - 576*x^6 + 86568*x^4 - 731648*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/53_92.json",
+       "bytes": 439110
+      },
+      {
+       "Dco": 77,
+       "Dcy": 5,
+       "n_points": 64,
+       "H": "x^8 - 2*x^6 + 143*x^4 - 1682*x^2 + 5041",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/77_5.json",
+       "bytes": 426166
+      },
+      {
+       "Dco": 77,
+       "Dcy": 8,
+       "n_points": 64,
+       "H": "x^8 - 14*x^6 + 323*x^4 - 4382*x^2 + 18769",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/77_8.json",
+       "bytes": 492815
+      },
+      {
+       "Dco": 77,
+       "Dcy": 53,
+       "n_points": 128,
+       "H": "x^8 - 194*x^6 + 15983*x^4 - 654002*x^2 + 10804369",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/77_53.json",
+       "bytes": 550119
+      },
+      {
+       "Dco": 77,
+       "Dcy": 92,
+       "n_points": 128,
+       "H": "x^16 - 692*x^14 + 217450*x^12 - 40477560*x^10 + 4873183251*x^8 - 387676331304*x^6 + 19851420769114*x^4 - 596731651765244*x^2 + 8044349375948209",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/77_92.json",
+       "bytes": 1663806
+      },
+      {
+       "Dco": 92,
+       "Dcy": 5,
+       "n_points": 32,
+       "H": "x^8 - 384*x^6 + 52392*x^4 - 2951936*x^2 + 60279696",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/92_5.json",
+       "bytes": 238935
+      },
+      {
+       "Dco": 92,
+       "Dcy": 8,
+       "n_points": 32,
+       "H": "x^8 - 396*x^6 + 53718*x^4 - 2826668*x^2 + 52664049",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/92_8.json",
+       "bytes": 223135
+      },
+      {
+       "Dco": 92,
+       "Dcy": 53,
+       "n_points": 64,
+       "H": "x^8 - 576*x^6 + 86568*x^4 - 731648*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/92_53.json",
+       "bytes": 571337
+      },
+      {
+       "Dco": 92,
+       "Dcy": 77,
+       "n_points": 128,
+       "H": "x^16 - 692*x^14 + 217450*x^12 - 40477560*x^10 + 4873183251*x^8 - 387676331304*x^6 + 19851420769114*x^4 - 596731651765244*x^2 + 8044349375948209",
+       "H_agrees": true,
+       "file": "jvalues/3_10_1/pairs/92_77.json",
+       "bytes": 2642699
+      }
+     ],
+     "index": "jvalues/3_10_1/index.json",
+     "index_bytes": 169693,
+     "labels": {
+      "available": true,
+      "check": {
+       "labels_file": "investigations/j_shimura_reciprocity/results/labels.json",
+       "labels_sha256": "9026fb3e8b7f91eacdf5dc66cfbdaa89da3f81646472aa22aa3f41def404b849",
+       "embeddings_sha256_recorded": "458e53592b1d4166ab87e98dcd7d01ddee038720ef7e3a5b3e16a805da0852de",
+       "embeddings_sha256_current": "a8b43c7c8bc3acb09acf9d7cb41337eac37873412b4c3012e1b37fd088215936",
+       "embeddings_recorded_commit": "05f5dc4c27a9dc84dd8a6c4b82d3d5747b709617",
+       "entries_compared": [
+        "EMB_10_1_5",
+        "EMB_10_1_8",
+        "EMB_10_1_53",
+        "EMB_10_1_77",
+        "EMB_10_1_92"
+       ],
+       "entries_unchanged": true
+      },
+      "convention": "(S, c): S the primes of disc(B)N at which the orientation differs from embedding 0, c the position in bqf_ncgp_lexic(D) of the narrow class taking w_S . emb_0 to emb_i (Rickards, Thm 4.5.4; level_computations/embedding_labels.py)"
+     },
+     "provenance": {
+      "exported": "2026-11-25T17:17:07",
+      "arguments": {
+       "level": "3_10_1",
+       "precision": 700,
+       "out": "dvk-database/build/data",
+       "pairs": null,
+       "precision_reason": "highest precision; P200/P400 superseded"
+      },
+      "datasets": {
+       "path": "datasets",
+       "commit": "82923d321f40aed261d2212c06740042156a99ff",
+       "branch": "main",
+       "dirty": false
+      },
+      "datasets_versions": "Last sync: 2026-11-18T16:20:42\nSage: SageMath version 10.1, Release Date: 2023-08-20\ndarmonpoints-dev: 0e2e1629fe7889f40b9c1311d866933244705a57\nlevel-computations-dev: 3ee61b87ae60f60de05f9ec3916f98e2d13e39d1\n",
+      "code": {
+       "level-computations-dev": {
+        "path": "level-computations-dev",
+        "commit": "3ee61b87ae60f60de05f9ec3916f98e2d13e39d1",
+        "branch": "main",
+        "dirty": false
+       },
+       "darmonpoints-dev": {
+        "path": "darmonpoints-dev",
+        "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+        "branch": "dvk-level-experimental",
+        "dirty": false
+       },
+       "dvk-database": {
+        "path": "dvk-database",
+        "commit": "19d91e9785ef7024b7f60b7828573d882e2a8985",
+        "branch": "master",
+        "dirty": false
+       }
+      },
+      "schema_version": 2
+     }
+    },
+    "3_10_7": {
+     "p": 3,
+     "D": 10,
+     "N": 7,
+     "precision": 500,
+     "padic_field": {
+      "p": 3,
+      "cap": 500,
+      "modulus": "x^2 - 2",
+      "gen": "g"
+     },
+     "padic_fields": [
+      {
+       "p": 3,
+       "cap": 500,
+       "modulus": "x^2 - 2",
+       "gen": "g"
+      }
+     ],
+     "sessions": {
+      "8": "121126_200026",
+      "53": "121126_200339",
+      "77": "121126_200538",
+      "92": "121126_200619"
+     },
+     "runs": {
+      "8": {
+       "manifest": "manifests/level_3_10_7_500_121126_200026.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "-4 + T11",
+        "terms": "[(-4, ()), (1, (('T', 11),))]",
+        "eisenstein": 8,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_3_10_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:07:32",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "53": {
+       "manifest": "manifests/level_3_10_7_500_121126_200339.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "-4 + T11",
+        "terms": "[(-4, ()), (1, (('T', 11),))]",
+        "eisenstein": 8,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_3_10_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:07:32",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "77": {
+       "manifest": "manifests/level_3_10_7_500_121126_200538.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "-4 + T11",
+        "terms": "[(-4, ()), (1, (('T', 11),))]",
+        "eisenstein": 8,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_3_10_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:07:32",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "92": {
+       "manifest": "manifests/level_3_10_7_500_121126_200619.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "-4 + T11",
+        "terms": "[(-4, ()), (1, (('T', 11),))]",
+        "eisenstein": 8,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_3_10_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:07:32",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      }
+     },
+     "killers": [
+      "{\"eisenstein\": 8, \"height\": 16, \"name\": \"-4 + T11\", \"source\": \"investigations/i_level_feasibility/results/probe_3_10_7.sobj\", \"terms\": \"[(-4, ()), (1, (('T', 11),))]\", \"type\": \"B\"}"
+     ],
+     "precision_reason": "highest precision; P200/P400 superseded",
+     "discs": [
+      8,
+      53,
+      77,
+      92
+     ],
+     "n_points": 2304,
+     "pairs": [
+      {
+       "Dco": 8,
+       "Dcy": 53,
+       "n_points": 128,
+       "H": "x^4 - 122*x^2 + 2025",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/8_53.json",
+       "bytes": 715652
+      },
+      {
+       "Dco": 8,
+       "Dcy": 77,
+       "n_points": 128,
+       "H": "x^8 - 14*x^6 + 323*x^4 - 4382*x^2 + 18769",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/8_77.json",
+       "bytes": 393602
+      },
+      {
+       "Dco": 8,
+       "Dcy": 92,
+       "n_points": 128,
+       "H": "x^8 - 396*x^6 + 53718*x^4 - 2826668*x^2 + 52664049",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/8_92.json",
+       "bytes": 398418
+      },
+      {
+       "Dco": 53,
+       "Dcy": 8,
+       "n_points": 128,
+       "H": "x^4 - 122*x^2 + 2025",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/53_8.json",
+       "bytes": 947137
+      },
+      {
+       "Dco": 53,
+       "Dcy": 77,
+       "n_points": 256,
+       "H": "x^8 - 194*x^6 + 15983*x^4 - 654002*x^2 + 10804369",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/53_77.json",
+       "bytes": 949990
+      },
+      {
+       "Dco": 53,
+       "Dcy": 92,
+       "n_points": 256,
+       "H": "x^8 - 576*x^6 + 86568*x^4 - 731648*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/53_92.json",
+       "bytes": 1005663
+      },
+      {
+       "Dco": 77,
+       "Dcy": 8,
+       "n_points": 128,
+       "H": "x^8 - 14*x^6 + 323*x^4 - 4382*x^2 + 18769",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/77_8.json",
+       "bytes": 505003
+      },
+      {
+       "Dco": 77,
+       "Dcy": 53,
+       "n_points": 256,
+       "H": "x^8 - 194*x^6 + 15983*x^4 - 654002*x^2 + 10804369",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/77_53.json",
+       "bytes": 950212
+      },
+      {
+       "Dco": 77,
+       "Dcy": 92,
+       "n_points": 256,
+       "H": "x^16 - 692*x^14 + 217450*x^12 - 40477560*x^10 + 4873183251*x^8 - 387676331304*x^6 + 19851420769114*x^4 - 596731651765244*x^2 + 8044349375948209",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/77_92.json",
+       "bytes": 1117675
+      },
+      {
+       "Dco": 92,
+       "Dcy": 8,
+       "n_points": 128,
+       "H": "x^8 - 396*x^6 + 53718*x^4 - 2826668*x^2 + 52664049",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/92_8.json",
+       "bytes": 513474
+      },
+      {
+       "Dco": 92,
+       "Dcy": 53,
+       "n_points": 256,
+       "H": "x^8 - 576*x^6 + 86568*x^4 - 731648*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/92_53.json",
+       "bytes": 1006289
+      },
+      {
+       "Dco": 92,
+       "Dcy": 77,
+       "n_points": 256,
+       "H": "x^16 - 692*x^14 + 217450*x^12 - 40477560*x^10 + 4873183251*x^8 - 387676331304*x^6 + 19851420769114*x^4 - 596731651765244*x^2 + 8044349375948209",
+       "H_agrees": true,
+       "file": "jvalues/3_10_7/pairs/92_77.json",
+       "bytes": 1117749
+      }
+     ],
+     "index": "jvalues/3_10_7/index.json",
+     "index_bytes": 279785,
+     "labels": {
+      "available": false,
+      "reason": "no labels for 3_10_7 in investigations/j_shimura_reciprocity/results/labels.json"
+     },
+     "provenance": {
+      "exported": "2026-11-25T17:17:57",
+      "arguments": {
+       "level": "3_10_7",
+       "precision": 500,
+       "out": "dvk-database/build/data",
+       "pairs": null,
+       "precision_reason": "highest precision; P200/P400 superseded"
+      },
+      "datasets": {
+       "path": "datasets",
+       "commit": "82923d321f40aed261d2212c06740042156a99ff",
+       "branch": "main",
+       "dirty": false
+      },
+      "datasets_versions": "Last sync: 2026-11-18T16:20:42\nSage: SageMath version 10.1, Release Date: 2023-08-20\ndarmonpoints-dev: 0e2e1629fe7889f40b9c1311d866933244705a57\nlevel-computations-dev: 3ee61b87ae60f60de05f9ec3916f98e2d13e39d1\n",
+      "code": {
+       "level-computations-dev": {
+        "path": "level-computations-dev",
+        "commit": "3ee61b87ae60f60de05f9ec3916f98e2d13e39d1",
+        "branch": "main",
+        "dirty": false
+       },
+       "darmonpoints-dev": {
+        "path": "darmonpoints-dev",
+        "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+        "branch": "dvk-level-experimental",
+        "dirty": false
+       },
+       "dvk-database": {
+        "path": "dvk-database",
+        "commit": "19d91e9785ef7024b7f60b7828573d882e2a8985",
+        "branch": "master",
+        "dirty": false
+       }
+      },
+      "schema_version": 2
+     }
+    },
+    "3_14_5": {
+     "p": 3,
+     "D": 14,
+     "N": 5,
+     "precision": 500,
+     "padic_field": {
+      "p": 3,
+      "cap": 500,
+      "modulus": "x^2 - x - 1",
+      "gen": "g"
+     },
+     "padic_fields": [
+      {
+       "p": 3,
+       "cap": 500,
+       "modulus": "x^2 - x - 1",
+       "gen": "g"
+      }
+     ],
+     "sessions": {
+      "5": "121126_195442",
+      "56": "121126_200054",
+      "101": "121126_200238",
+      "104": "121126_200709",
+      "140": "121126_201022"
+     },
+     "runs": {
+      "5": {
+       "manifest": "manifests/level_3_14_5_500_121126_195442.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "T23",
+        "terms": "[(1, (('T', 23),))]",
+        "eisenstein": 24,
+        "height": 24,
+        "source": "investigations/i_level_feasibility/results/probe_3_14_5.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:11:23",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "56": {
+       "manifest": "manifests/level_3_14_5_500_121126_200054.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "T23",
+        "terms": "[(1, (('T', 23),))]",
+        "eisenstein": 24,
+        "height": 24,
+        "source": "investigations/i_level_feasibility/results/probe_3_14_5.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:11:23",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "101": {
+       "manifest": "manifests/level_3_14_5_500_121126_200238.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "T23",
+        "terms": "[(1, (('T', 23),))]",
+        "eisenstein": 24,
+        "height": 24,
+        "source": "investigations/i_level_feasibility/results/probe_3_14_5.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:11:23",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "104": {
+       "manifest": "manifests/level_3_14_5_500_121126_200709.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "T23",
+        "terms": "[(1, (('T', 23),))]",
+        "eisenstein": 24,
+        "height": 24,
+        "source": "investigations/i_level_feasibility/results/probe_3_14_5.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:11:23",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "140": {
+       "manifest": "manifests/level_3_14_5_500_121126_201022.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "T23",
+        "terms": "[(1, (('T', 23),))]",
+        "eisenstein": 24,
+        "height": 24,
+        "source": "investigations/i_level_feasibility/results/probe_3_14_5.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:11:23",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      }
+     },
+     "killers": [
+      "{\"eisenstein\": 24, \"height\": 24, \"name\": \"T23\", \"source\": \"investigations/i_level_feasibility/results/probe_3_14_5.sobj\", \"terms\": \"[(1, (('T', 23),))]\", \"type\": \"B\"}"
+     ],
+     "precision_reason": "highest precision; P200/P400 superseded",
+     "discs": [
+      5,
+      56,
+      101,
+      104,
+      140
+     ],
+     "n_points": 2432,
+     "pairs": [
+      {
+       "Dco": 5,
+       "Dcy": 56,
+       "n_points": 64,
+       "H": "x^8 + 40*x^6 + 752*x^4 - 10880*x^2 + 30976",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/5_56.json",
+       "bytes": 384390
+      },
+      {
+       "Dco": 5,
+       "Dcy": 101,
+       "n_points": 128,
+       "H": "x^4 - 212*x^2 + 9216",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/5_101.json",
+       "bytes": 1004556
+      },
+      {
+       "Dco": 5,
+       "Dcy": 104,
+       "n_points": 128,
+       "H": "x^8 - 104*x^6 + 2384*x^4 - 16640*x^2 + 25600",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/5_104.json",
+       "bytes": 1162669
+      },
+      {
+       "Dco": 5,
+       "Dcy": 140,
+       "n_points": 64,
+       "H": "x^8 - 9*x^6 + 37*x^4 - 36*x^2 + 16",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/5_140.json",
+       "bytes": 500331
+      },
+      {
+       "Dco": 56,
+       "Dcy": 5,
+       "n_points": 64,
+       "H": "x^8 + 40*x^6 + 752*x^4 - 10880*x^2 + 30976",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/56_5.json",
+       "bytes": 384361
+      },
+      {
+       "Dco": 56,
+       "Dcy": 101,
+       "n_points": 128,
+       "H": "x^8 - 344*x^6 + 56048*x^4 - 4913792*x^2 + 175085824",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/56_101.json",
+       "bytes": 1200766
+      },
+      {
+       "Dco": 56,
+       "Dcy": 104,
+       "n_points": 128,
+       "H": "x^16 - 48*x^14 + 3488*x^12 - 52224*x^10 - 10116352*x^8 + 94519296*x^6 + 8070209536*x^4 - 9287958528*x^2 + 3317760000",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/56_104.json",
+       "bytes": 1186251
+      },
+      {
+       "Dco": 56,
+       "Dcy": 140,
+       "n_points": 64,
+       "H": "x^16 + 7*x^12 + 753*x^8 + 112*x^4 + 256",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/56_140.json",
+       "bytes": 1240713
+      },
+      {
+       "Dco": 101,
+       "Dcy": 5,
+       "n_points": 128,
+       "H": "x^4 - 212*x^2 + 9216",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/101_5.json",
+       "bytes": 1659096
+      },
+      {
+       "Dco": 101,
+       "Dcy": 56,
+       "n_points": 128,
+       "H": "x^8 - 344*x^6 + 56048*x^4 - 4913792*x^2 + 175085824",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/101_56.json",
+       "bytes": 2106589
+      },
+      {
+       "Dco": 101,
+       "Dcy": 104,
+       "n_points": 256,
+       "H": "x^8 - 488*x^6 + 71504*x^4 - 3592448*x^2 + 35808256",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/101_104.json",
+       "bytes": 4697748
+      },
+      {
+       "Dco": 101,
+       "Dcy": 140,
+       "n_points": 128,
+       "H": "x^16 + 184*x^14 + 15708*x^12 + 807626*x^10 + 27241348*x^8 + 615626252*x^6 + 9093584457*x^4 + 80011364332*x^2 + 321538897936",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/101_140.json",
+       "bytes": 3243965
+      },
+      {
+       "Dco": 104,
+       "Dcy": 5,
+       "n_points": 128,
+       "H": "x^8 - 104*x^6 + 2384*x^4 - 16640*x^2 + 25600",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/104_5.json",
+       "bytes": 1657911
+      },
+      {
+       "Dco": 104,
+       "Dcy": 56,
+       "n_points": 128,
+       "H": "x^16 - 48*x^14 + 3488*x^12 - 52224*x^10 - 10116352*x^8 + 94519296*x^6 + 8070209536*x^4 - 9287958528*x^2 + 3317760000",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/104_56.json",
+       "bytes": 2067984
+      },
+      {
+       "Dco": 104,
+       "Dcy": 101,
+       "n_points": 256,
+       "H": "x^8 - 488*x^6 + 71504*x^4 - 3592448*x^2 + 35808256",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/104_101.json",
+       "bytes": 5099578
+      },
+      {
+       "Dco": 104,
+       "Dcy": 140,
+       "n_points": 128,
+       "H": "x^32 - 200*x^28 + 15352*x^24 - 835630*x^20 + 50194088*x^16 - 2271020680*x^12 + 55961566417*x^8 - 245292903440*x^4 + 340701020416",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/104_140.json",
+       "bytes": 398620
+      },
+      {
+       "Dco": 140,
+       "Dcy": 5,
+       "n_points": 64,
+       "H": "x^8 - 9*x^6 + 37*x^4 - 36*x^2 + 16",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/140_5.json",
+       "bytes": 183004
+      },
+      {
+       "Dco": 140,
+       "Dcy": 56,
+       "n_points": 64,
+       "H": "x^16 + 7*x^12 + 753*x^8 + 112*x^4 + 256",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/140_56.json",
+       "bytes": 192072
+      },
+      {
+       "Dco": 140,
+       "Dcy": 101,
+       "n_points": 128,
+       "H": "x^16 + 184*x^14 + 15708*x^12 + 807626*x^10 + 27241348*x^8 + 615626252*x^6 + 9093584457*x^4 + 80011364332*x^2 + 321538897936",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/140_101.json",
+       "bytes": 355965
+      },
+      {
+       "Dco": 140,
+       "Dcy": 104,
+       "n_points": 128,
+       "H": "x^32 - 200*x^28 + 15352*x^24 - 835630*x^20 + 50194088*x^16 - 2271020680*x^12 + 55961566417*x^8 - 245292903440*x^4 + 340701020416",
+       "H_agrees": true,
+       "file": "jvalues/3_14_5/pairs/140_104.json",
+       "bytes": 357464
+      }
+     ],
+     "index": "jvalues/3_14_5/index.json",
+     "index_bytes": 305717,
+     "labels": {
+      "available": false,
+      "reason": "no labels for 3_14_5 in investigations/j_shimura_reciprocity/results/labels.json"
+     },
+     "provenance": {
+      "exported": "2026-11-25T17:18:22",
+      "arguments": {
+       "level": "3_14_5",
+       "precision": 500,
+       "out": "dvk-database/build/data",
+       "pairs": null,
+       "precision_reason": "highest precision; P200/P400 superseded"
+      },
+      "datasets": {
+       "path": "datasets",
+       "commit": "82923d321f40aed261d2212c06740042156a99ff",
+       "branch": "main",
+       "dirty": false
+      },
+      "datasets_versions": "Last sync: 2026-11-18T16:20:42\nSage: SageMath version 10.1, Release Date: 2023-08-20\ndarmonpoints-dev: 0e2e1629fe7889f40b9c1311d866933244705a57\nlevel-computations-dev: 3ee61b87ae60f60de05f9ec3916f98e2d13e39d1\n",
+      "code": {
+       "level-computations-dev": {
+        "path": "level-computations-dev",
+        "commit": "3ee61b87ae60f60de05f9ec3916f98e2d13e39d1",
+        "branch": "main",
+        "dirty": false
+       },
+       "darmonpoints-dev": {
+        "path": "darmonpoints-dev",
+        "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+        "branch": "dvk-level-experimental",
+        "dirty": false
+       },
+       "dvk-database": {
+        "path": "dvk-database",
+        "commit": "19d91e9785ef7024b7f60b7828573d882e2a8985",
+        "branch": "master",
+        "dirty": false
+       }
+      },
+      "schema_version": 2
+     }
+    },
+    "5_6_1": {
+     "p": 5,
+     "D": 6,
+     "N": 1,
+     "precision": 700,
+     "padic_field": {
+      "p": 5,
+      "cap": 700,
+      "modulus": "x^2 - 2",
+      "gen": "g"
+     },
+     "padic_fields": [
+      {
+       "p": 5,
+       "cap": 700,
+       "modulus": "x^2 - 2",
+       "gen": "g"
+      }
+     ],
+     "sessions": {
+      "8": "121126_205448",
+      "12": "121126_205541",
+      "53": "121126_205550",
+      "77": "121126_205600",
+      "92": "121126_205617",
+      "93": "121126_205627"
+     },
+     "runs": {
+      "8": {
+       "manifest": "manifests/level_5_6_1_700_121126_205448.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:56:36",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "12": {
+       "manifest": "manifests/level_5_6_1_700_121126_205541.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:56:36",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "53": {
+       "manifest": "manifests/level_5_6_1_700_121126_205550.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:56:36",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "77": {
+       "manifest": "manifests/level_5_6_1_700_121126_205600.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:56:36",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "92": {
+       "manifest": "manifests/level_5_6_1_700_121126_205617.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:56:36",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "93": {
+       "manifest": "manifests/level_5_6_1_700_121126_205627.manifest.json",
+       "killer": null,
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:56:36",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      }
+     },
+     "killers": [
+      "null"
+     ],
+     "precision_reason": "highest precision; P100 (rising discriminants, investigation (z)), P200, P400 not exported",
+     "discs": [
+      8,
+      12,
+      53,
+      77,
+      92,
+      93
+     ],
+     "n_points": 1824,
+     "pairs": [
+      {
+       "Dco": 8,
+       "Dcy": 12,
+       "n_points": 16,
+       "H": "x^8 - 76*x^6 + 1558*x^4 + 1812*x^2 + 3249",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/8_12.json",
+       "bytes": 113572
+      },
+      {
+       "Dco": 8,
+       "Dcy": 53,
+       "n_points": 32,
+       "H": "x^4 - 122*x^2 + 2025",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/8_53.json",
+       "bytes": 185607
+      },
+      {
+       "Dco": 8,
+       "Dcy": 77,
+       "n_points": 64,
+       "H": "x^8 - 14*x^6 + 323*x^4 - 4382*x^2 + 18769",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/8_77.json",
+       "bytes": 499762
+      },
+      {
+       "Dco": 8,
+       "Dcy": 92,
+       "n_points": 32,
+       "H": "x^8 - 396*x^6 + 53718*x^4 - 2826668*x^2 + 52664049",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/8_92.json",
+       "bytes": 234671
+      },
+      {
+       "Dco": 8,
+       "Dcy": 93,
+       "n_points": 32,
+       "H": "x^8 + 26*x^6 + 763*x^4 - 19062*x^2 + 88209",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/8_93.json",
+       "bytes": 225100
+      },
+      {
+       "Dco": 12,
+       "Dcy": 8,
+       "n_points": 16,
+       "H": "x^8 - 76*x^6 + 1558*x^4 + 1812*x^2 + 3249",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/12_8.json",
+       "bytes": 112433
+      },
+      {
+       "Dco": 12,
+       "Dcy": 53,
+       "n_points": 32,
+       "H": "x^8 - 256*x^6 + 20008*x^4 - 423168*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/12_53.json",
+       "bytes": 266093
+      },
+      {
+       "Dco": 12,
+       "Dcy": 77,
+       "n_points": 64,
+       "H": "x^16 - 52*x^14 + 2090*x^12 - 64440*x^10 + 1489811*x^8 - 24290664*x^6 + 267219674*x^4 - 1796973244*x^2 + 5784667249",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/12_77.json",
+       "bytes": 706891
+      },
+      {
+       "Dco": 12,
+       "Dcy": 92,
+       "n_points": 32,
+       "H": "x^8 - 556*x^6 + 81718*x^4 - 950028*x^2 + 4915089",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/12_92.json",
+       "bytes": 284639
+      },
+      {
+       "Dco": 12,
+       "Dcy": 93,
+       "n_points": 32,
+       "H": "x^8 + 14*x^6 - 144*x^5 + 1027*x^4 + 3456*x^3 - 30750*x^2 - 16848*x + 279297",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/12_93.json",
+       "bytes": 216132
+      },
+      {
+       "Dco": 53,
+       "Dcy": 8,
+       "n_points": 32,
+       "H": "x^4 - 122*x^2 + 2025",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/53_8.json",
+       "bytes": 219088
+      },
+      {
+       "Dco": 53,
+       "Dcy": 12,
+       "n_points": 32,
+       "H": "x^8 - 256*x^6 + 20008*x^4 - 423168*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/53_12.json",
+       "bytes": 260137
+      },
+      {
+       "Dco": 53,
+       "Dcy": 77,
+       "n_points": 128,
+       "H": "x^8 - 194*x^6 + 15983*x^4 - 654002*x^2 + 10804369",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/53_77.json",
+       "bytes": 675419
+      },
+      {
+       "Dco": 53,
+       "Dcy": 92,
+       "n_points": 64,
+       "H": "x^8 - 576*x^6 + 86568*x^4 - 731648*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/53_92.json",
+       "bytes": 492660
+      },
+      {
+       "Dco": 53,
+       "Dcy": 93,
+       "n_points": 64,
+       "H": "x^8 - 154*x^6 + 14623*x^4 - 846882*x^2 + 18896409",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/53_93.json",
+       "bytes": 675390
+      },
+      {
+       "Dco": 77,
+       "Dcy": 8,
+       "n_points": 64,
+       "H": "x^8 - 14*x^6 + 323*x^4 - 4382*x^2 + 18769",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/77_8.json",
+       "bytes": 623343
+      },
+      {
+       "Dco": 77,
+       "Dcy": 12,
+       "n_points": 64,
+       "H": "x^16 - 52*x^14 + 2090*x^12 - 64440*x^10 + 1489811*x^8 - 24290664*x^6 + 267219674*x^4 - 1796973244*x^2 + 5784667249",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/77_12.json",
+       "bytes": 713238
+      },
+      {
+       "Dco": 77,
+       "Dcy": 53,
+       "n_points": 128,
+       "H": "x^8 - 194*x^6 + 15983*x^4 - 654002*x^2 + 10804369",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/77_53.json",
+       "bytes": 732051
+      },
+      {
+       "Dco": 77,
+       "Dcy": 92,
+       "n_points": 128,
+       "H": "x^16 - 692*x^14 + 217450*x^12 - 40477560*x^10 + 4873183251*x^8 - 387676331304*x^6 + 19851420769114*x^4 - 596731651765244*x^2 + 8044349375948209",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/77_92.json",
+       "bytes": 1641991
+      },
+      {
+       "Dco": 77,
+       "Dcy": 93,
+       "n_points": 128,
+       "H": "x^16 + 152*x^14 + 8150*x^12 + 199956*x^10 + 2378609*x^8 + 13449036*x^6 + 30070784*x^4 + 7812800*x^2 + 160000",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/77_93.json",
+       "bytes": 990322
+      },
+      {
+       "Dco": 92,
+       "Dcy": 8,
+       "n_points": 32,
+       "H": "x^8 - 396*x^6 + 53718*x^4 - 2826668*x^2 + 52664049",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/92_8.json",
+       "bytes": 317365
+      },
+      {
+       "Dco": 92,
+       "Dcy": 12,
+       "n_points": 32,
+       "H": "x^8 - 1516*x^6 + 829558*x^4 - 193002828*x^2 + 16255485009",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/92_12.json",
+       "bytes": 284288
+      },
+      {
+       "Dco": 92,
+       "Dcy": 53,
+       "n_points": 64,
+       "H": "x^8 - 576*x^6 + 86568*x^4 - 731648*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/92_53.json",
+       "bytes": 625653
+      },
+      {
+       "Dco": 92,
+       "Dcy": 77,
+       "n_points": 128,
+       "H": "x^16 - 692*x^14 + 217450*x^12 - 40477560*x^10 + 4873183251*x^8 - 387676331304*x^6 + 19851420769114*x^4 - 596731651765244*x^2 + 8044349375948209",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/92_77.json",
+       "bytes": 2423933
+      },
+      {
+       "Dco": 92,
+       "Dcy": 93,
+       "n_points": 64,
+       "H": "x^16 - 612*x^14 + 185610*x^12 - 35833000*x^10 + 4732980291*x^8 - 432528759384*x^6 + 26418376844554*x^4 - 973267842299004*x^2 + 16319944203714369",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/92_93.json",
+       "bytes": 1238198
+      },
+      {
+       "Dco": 93,
+       "Dcy": 8,
+       "n_points": 32,
+       "H": "x^8 + 26*x^6 + 763*x^4 - 19062*x^2 + 88209",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/93_8.json",
+       "bytes": 254369
+      },
+      {
+       "Dco": 93,
+       "Dcy": 12,
+       "n_points": 32,
+       "H": "x^8 + 14*x^6 - 144*x^5 + 1027*x^4 + 3456*x^3 - 30750*x^2 - 16848*x + 279297",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/93_12.json",
+       "bytes": 281685
+      },
+      {
+       "Dco": 93,
+       "Dcy": 53,
+       "n_points": 64,
+       "H": "x^8 - 154*x^6 + 14623*x^4 - 846882*x^2 + 18896409",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/93_53.json",
+       "bytes": 740958
+      },
+      {
+       "Dco": 93,
+       "Dcy": 77,
+       "n_points": 128,
+       "H": "x^16 + 152*x^14 + 8150*x^12 + 199956*x^10 + 2378609*x^8 + 13449036*x^6 + 30070784*x^4 + 7812800*x^2 + 160000",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/93_77.json",
+       "bytes": 833154
+      },
+      {
+       "Dco": 93,
+       "Dcy": 92,
+       "n_points": 64,
+       "H": "x^16 - 612*x^14 + 185610*x^12 - 35833000*x^10 + 4732980291*x^8 - 432528759384*x^6 + 26418376844554*x^4 - 973267842299004*x^2 + 16319944203714369",
+       "H_agrees": true,
+       "file": "jvalues/5_6_1/pairs/93_92.json",
+       "bytes": 863389
+      }
+     ],
+     "index": "jvalues/5_6_1/index.json",
+     "index_bytes": 259850,
+     "labels": {
+      "available": true,
+      "check": {
+       "labels_file": "investigations/j_shimura_reciprocity/results/labels.json",
+       "labels_sha256": "9026fb3e8b7f91eacdf5dc66cfbdaa89da3f81646472aa22aa3f41def404b849",
+       "embeddings_sha256_recorded": "458e53592b1d4166ab87e98dcd7d01ddee038720ef7e3a5b3e16a805da0852de",
+       "embeddings_sha256_current": "a8b43c7c8bc3acb09acf9d7cb41337eac37873412b4c3012e1b37fd088215936",
+       "embeddings_recorded_commit": "05f5dc4c27a9dc84dd8a6c4b82d3d5747b709617",
+       "entries_compared": [
+        "EMB_6_1_8",
+        "EMB_6_1_12",
+        "EMB_6_1_53",
+        "EMB_6_1_77",
+        "EMB_6_1_92",
+        "EMB_6_1_93"
+       ],
+       "entries_unchanged": true
+      },
+      "convention": "(S, c): S the primes of disc(B)N at which the orientation differs from embedding 0, c the position in bqf_ncgp_lexic(D) of the narrow class taking w_S . emb_0 to emb_i (Rickards, Thm 4.5.4; level_computations/embedding_labels.py)"
+     },
+     "provenance": {
+      "exported": "2026-11-25T17:19:21",
+      "arguments": {
+       "level": "5_6_1",
+       "precision": 700,
+       "out": "dvk-database/build/data",
+       "pairs": null,
+       "precision_reason": "highest precision; P100 (rising discriminants, investigation (z)), P200, P400 not exported"
+      },
+      "datasets": {
+       "path": "datasets",
+       "commit": "82923d321f40aed261d2212c06740042156a99ff",
+       "branch": "main",
+       "dirty": false
+      },
+      "datasets_versions": "Last sync: 2026-11-18T16:20:42\nSage: SageMath version 10.1, Release Date: 2023-08-20\ndarmonpoints-dev: 0e2e1629fe7889f40b9c1311d866933244705a57\nlevel-computations-dev: 3ee61b87ae60f60de05f9ec3916f98e2d13e39d1\n",
+      "code": {
+       "level-computations-dev": {
+        "path": "level-computations-dev",
+        "commit": "3ee61b87ae60f60de05f9ec3916f98e2d13e39d1",
+        "branch": "main",
+        "dirty": false
+       },
+       "darmonpoints-dev": {
+        "path": "darmonpoints-dev",
+        "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+        "branch": "dvk-level-experimental",
+        "dirty": false
+       },
+       "dvk-database": {
+        "path": "dvk-database",
+        "commit": "19d91e9785ef7024b7f60b7828573d882e2a8985",
+        "branch": "master",
+        "dirty": false
+       }
+      },
+      "schema_version": 2
+     }
+    },
+    "5_6_7": {
+     "p": 5,
+     "D": 6,
+     "N": 7,
+     "precision": 500,
+     "padic_field": {
+      "p": 5,
+      "cap": 500,
+      "modulus": "x^2 - 2",
+      "gen": "g"
+     },
+     "padic_fields": [
+      {
+       "p": 5,
+       "cap": 500,
+       "modulus": "x^2 - 2",
+       "gen": "g"
+      }
+     ],
+     "sessions": {
+      "8": "121126_195633",
+      "53": "121126_195851",
+      "77": "121126_195922",
+      "92": "121126_195939",
+      "93": "121126_200002"
+     },
+     "runs": {
+      "8": {
+       "manifest": "manifests/level_5_6_7_500_121126_195633.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "4 + T11",
+        "terms": "[(4, ()), (1, (('T', 11),))]",
+        "eisenstein": 16,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_5_6_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:00:21",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "53": {
+       "manifest": "manifests/level_5_6_7_500_121126_195851.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "4 + T11",
+        "terms": "[(4, ()), (1, (('T', 11),))]",
+        "eisenstein": 16,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_5_6_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:00:21",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "77": {
+       "manifest": "manifests/level_5_6_7_500_121126_195922.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "4 + T11",
+        "terms": "[(4, ()), (1, (('T', 11),))]",
+        "eisenstein": 16,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_5_6_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:00:21",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "92": {
+       "manifest": "manifests/level_5_6_7_500_121126_195939.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "4 + T11",
+        "terms": "[(4, ()), (1, (('T', 11),))]",
+        "eisenstein": 16,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_5_6_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:00:21",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "93": {
+       "manifest": "manifests/level_5_6_7_500_121126_200002.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "4 + T11",
+        "terms": "[(4, ()), (1, (('T', 11),))]",
+        "eisenstein": 16,
+        "height": 16,
+        "source": "investigations/i_level_feasibility/results/probe_5_6_7.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-12T20:00:21",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      }
+     },
+     "killers": [
+      "{\"eisenstein\": 16, \"height\": 16, \"name\": \"4 + T11\", \"source\": \"investigations/i_level_feasibility/results/probe_5_6_7.sobj\", \"terms\": \"[(4, ()), (1, (('T', 11),))]\", \"type\": \"B\"}"
+     ],
+     "precision_reason": "highest precision; P200/P400 superseded",
+     "discs": [
+      8,
+      53,
+      77,
+      92,
+      93
+     ],
+     "n_points": 4096,
+     "pairs": [
+      {
+       "Dco": 8,
+       "Dcy": 53,
+       "n_points": 128,
+       "H": "x^4 - 122*x^2 + 2025",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/8_53.json",
+       "bytes": 887058
+      },
+      {
+       "Dco": 8,
+       "Dcy": 77,
+       "n_points": 128,
+       "H": "x^8 - 14*x^6 + 323*x^4 - 4382*x^2 + 18769",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/8_77.json",
+       "bytes": 464115
+      },
+      {
+       "Dco": 8,
+       "Dcy": 92,
+       "n_points": 128,
+       "H": "x^8 - 396*x^6 + 53718*x^4 - 2826668*x^2 + 52664049",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/8_92.json",
+       "bytes": 447306
+      },
+      {
+       "Dco": 8,
+       "Dcy": 93,
+       "n_points": 128,
+       "H": "x^8 + 26*x^6 + 763*x^4 - 19062*x^2 + 88209",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/8_93.json",
+       "bytes": 436772
+      },
+      {
+       "Dco": 53,
+       "Dcy": 8,
+       "n_points": 128,
+       "H": "x^4 - 122*x^2 + 2025",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/53_8.json",
+       "bytes": 895054
+      },
+      {
+       "Dco": 53,
+       "Dcy": 77,
+       "n_points": 256,
+       "H": "x^8 - 194*x^6 + 15983*x^4 - 654002*x^2 + 10804369",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/53_77.json",
+       "bytes": 1091301
+      },
+      {
+       "Dco": 53,
+       "Dcy": 92,
+       "n_points": 256,
+       "H": "x^8 - 576*x^6 + 86568*x^4 - 731648*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/53_92.json",
+       "bytes": 1107650
+      },
+      {
+       "Dco": 53,
+       "Dcy": 93,
+       "n_points": 256,
+       "H": "x^8 - 154*x^6 + 14623*x^4 - 846882*x^2 + 18896409",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/53_93.json",
+       "bytes": 1088317
+      },
+      {
+       "Dco": 77,
+       "Dcy": 8,
+       "n_points": 128,
+       "H": "x^8 - 14*x^6 + 323*x^4 - 4382*x^2 + 18769",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/77_8.json",
+       "bytes": 575292
+      },
+      {
+       "Dco": 77,
+       "Dcy": 53,
+       "n_points": 256,
+       "H": "x^8 - 194*x^6 + 15983*x^4 - 654002*x^2 + 10804369",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/77_53.json",
+       "bytes": 1091307
+      },
+      {
+       "Dco": 77,
+       "Dcy": 92,
+       "n_points": 256,
+       "H": "x^16 - 692*x^14 + 217450*x^12 - 40477560*x^10 + 4873183251*x^8 - 387676331304*x^6 + 19851420769114*x^4 - 596731651765244*x^2 + 8044349375948209",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/77_92.json",
+       "bytes": 1259836
+      },
+      {
+       "Dco": 77,
+       "Dcy": 93,
+       "n_points": 256,
+       "H": "x^16 + 152*x^14 + 8150*x^12 + 199956*x^10 + 2378609*x^8 + 13449036*x^6 + 30070784*x^4 + 7812800*x^2 + 160000",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/77_93.json",
+       "bytes": 1248988
+      },
+      {
+       "Dco": 92,
+       "Dcy": 8,
+       "n_points": 128,
+       "H": "x^8 - 396*x^6 + 53718*x^4 - 2826668*x^2 + 52664049",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/92_8.json",
+       "bytes": 562115
+      },
+      {
+       "Dco": 92,
+       "Dcy": 53,
+       "n_points": 256,
+       "H": "x^8 - 576*x^6 + 86568*x^4 - 731648*x^2 + 3283344",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/92_53.json",
+       "bytes": 1107604
+      },
+      {
+       "Dco": 92,
+       "Dcy": 77,
+       "n_points": 256,
+       "H": "x^16 - 692*x^14 + 217450*x^12 - 40477560*x^10 + 4873183251*x^8 - 387676331304*x^6 + 19851420769114*x^4 - 596731651765244*x^2 + 8044349375948209",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/92_77.json",
+       "bytes": 1260045
+      },
+      {
+       "Dco": 92,
+       "Dcy": 93,
+       "n_points": 256,
+       "H": "x^16 - 612*x^14 + 185610*x^12 - 35833000*x^10 + 4732980291*x^8 - 432528759384*x^6 + 26418376844554*x^4 - 973267842299004*x^2 + 16319944203714369",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/92_93.json",
+       "bytes": 1278756
+      },
+      {
+       "Dco": 93,
+       "Dcy": 8,
+       "n_points": 128,
+       "H": "x^8 + 26*x^6 + 763*x^4 - 19062*x^2 + 88209",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/93_8.json",
+       "bytes": 567446
+      },
+      {
+       "Dco": 93,
+       "Dcy": 53,
+       "n_points": 256,
+       "H": "x^8 - 154*x^6 + 14623*x^4 - 846882*x^2 + 18896409",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/93_53.json",
+       "bytes": 1113327
+      },
+      {
+       "Dco": 93,
+       "Dcy": 77,
+       "n_points": 256,
+       "H": "x^16 + 152*x^14 + 8150*x^12 + 199956*x^10 + 2378609*x^8 + 13449036*x^6 + 30070784*x^4 + 7812800*x^2 + 160000",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/93_77.json",
+       "bytes": 1249013
+      },
+      {
+       "Dco": 93,
+       "Dcy": 92,
+       "n_points": 256,
+       "H": "x^16 - 612*x^14 + 185610*x^12 - 35833000*x^10 + 4732980291*x^8 - 432528759384*x^6 + 26418376844554*x^4 - 973267842299004*x^2 + 16319944203714369",
+       "H_agrees": true,
+       "file": "jvalues/5_6_7/pairs/93_92.json",
+       "bytes": 1278760
+      }
+     ],
+     "index": "jvalues/5_6_7/index.json",
+     "index_bytes": 496384,
+     "labels": {
+      "available": false,
+      "reason": "no labels for 5_6_7 in investigations/j_shimura_reciprocity/results/labels.json"
+     },
+     "provenance": {
+      "exported": "2026-11-25T17:20:43",
+      "arguments": {
+       "level": "5_6_7",
+       "precision": 500,
+       "out": "dvk-database/build/data",
+       "pairs": null,
+       "precision_reason": "highest precision; P200/P400 superseded"
+      },
+      "datasets": {
+       "path": "datasets",
+       "commit": "82923d321f40aed261d2212c06740042156a99ff",
+       "branch": "main",
+       "dirty": false
+      },
+      "datasets_versions": "Last sync: 2026-11-18T16:20:42\nSage: SageMath version 10.1, Release Date: 2023-08-20\ndarmonpoints-dev: 0e2e1629fe7889f40b9c1311d866933244705a57\nlevel-computations-dev: 3ee61b87ae60f60de05f9ec3916f98e2d13e39d1\n",
+      "code": {
+       "level-computations-dev": {
+        "path": "level-computations-dev",
+        "commit": "3ee61b87ae60f60de05f9ec3916f98e2d13e39d1",
+        "branch": "main",
+        "dirty": false
+       },
+       "darmonpoints-dev": {
+        "path": "darmonpoints-dev",
+        "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+        "branch": "dvk-level-experimental",
+        "dirty": false
+       },
+       "dvk-database": {
+        "path": "dvk-database",
+        "commit": "19d91e9785ef7024b7f60b7828573d882e2a8985",
+        "branch": "master",
+        "dirty": false
+       }
+      },
+      "schema_version": 2
+     }
+    },
+    "5_14_3": {
+     "p": 5,
+     "D": 14,
+     "N": 3,
+     "precision": 500,
+     "padic_field": {
+      "p": 5,
+      "cap": 500,
+      "modulus": "x^2 - 3",
+      "gen": "g"
+     },
+     "padic_fields": [
+      {
+       "p": 5,
+       "cap": 500,
+       "modulus": "x^2 - 3",
+       "gen": "g"
+      }
+     ],
+     "sessions": {
+      "12": "131126_071808",
+      "13": "131126_071932",
+      "28": "131126_072018"
+     },
+     "runs": {
+      "12": {
+       "manifest": "manifests/level_5_14_3_500_131126_071808.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "2*T11 + T23",
+        "terms": "[(2, (('T', 11),)), (1, (('T', 23),))]",
+        "eisenstein": 48,
+        "height": 48,
+        "source": "investigations/i_level_feasibility/results/probe_5_14_3.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-13T07:20:32",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "13": {
+       "manifest": "manifests/level_5_14_3_500_131126_071932.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "2*T11 + T23",
+        "terms": "[(2, (('T', 11),)), (1, (('T', 23),))]",
+        "eisenstein": 48,
+        "height": 48,
+        "source": "investigations/i_level_feasibility/results/probe_5_14_3.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-13T07:20:32",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "28": {
+       "manifest": "manifests/level_5_14_3_500_131126_072018.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "2*T11 + T23",
+        "terms": "[(2, (('T', 11),)), (1, (('T', 23),))]",
+        "eisenstein": 48,
+        "height": 48,
+        "source": "investigations/i_level_feasibility/results/probe_5_14_3.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-13T07:20:32",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      }
+     },
+     "killers": [
+      "{\"eisenstein\": 48, \"height\": 48, \"name\": \"2*T11 + T23\", \"source\": \"investigations/i_level_feasibility/results/probe_5_14_3.sobj\", \"terms\": \"[(2, (('T', 11),)), (1, (('T', 23),))]\", \"type\": \"B\"}"
+     ],
+     "precision_reason": "highest precision; P200 superseded",
+     "discs": [
+      12,
+      13,
+      28
+     ],
+     "n_points": 640,
+     "pairs": [
+      {
+       "Dco": 12,
+       "Dcy": 13,
+       "n_points": 128,
+       "H": "x^8 - 96*x^6 + 2408*x^4 + 4992*x^2 + 2704",
+       "H_agrees": true,
+       "file": "jvalues/5_14_3/pairs/12_13.json",
+       "bytes": 645604
+      },
+      {
+       "Dco": 12,
+       "Dcy": 28,
+       "n_points": 64,
+       "H": "x^8 - 300*x^6 + 23606*x^4 - 79884*x^2 + 305809",
+       "H_agrees": true,
+       "file": "jvalues/5_14_3/pairs/12_28.json",
+       "bytes": 500043
+      },
+      {
+       "Dco": 13,
+       "Dcy": 12,
+       "n_points": 128,
+       "H": "x^8 - 96*x^6 + 2408*x^4 + 4992*x^2 + 2704",
+       "H_agrees": true,
+       "file": "jvalues/5_14_3/pairs/13_12.json",
+       "bytes": 892637
+      },
+      {
+       "Dco": 13,
+       "Dcy": 28,
+       "n_points": 128,
+       "H": "x^8 - 160*x^6 + 7016*x^4 - 25984*x^2 + 94864",
+       "H_agrees": true,
+       "file": "jvalues/5_14_3/pairs/13_28.json",
+       "bytes": 1047821
+      },
+      {
+       "Dco": 28,
+       "Dcy": 12,
+       "n_points": 64,
+       "H": "x^8 - 492*x^6 + 81014*x^4 - 4956492*x^2 + 105042001",
+       "H_agrees": true,
+       "file": "jvalues/5_14_3/pairs/28_12.json",
+       "bytes": 500552
+      },
+      {
+       "Dco": 28,
+       "Dcy": 13,
+       "n_points": 128,
+       "H": "x^8 - 160*x^6 + 7016*x^4 - 25984*x^2 + 94864",
+       "H_agrees": true,
+       "file": "jvalues/5_14_3/pairs/28_13.json",
+       "bytes": 712378
+      }
+     ],
+     "index": "jvalues/5_14_3/index.json",
+     "index_bytes": 78649,
+     "labels": {
+      "available": false,
+      "reason": "no labels for 5_14_3 in investigations/j_shimura_reciprocity/results/labels.json"
+     },
+     "provenance": {
+      "exported": "2026-11-25T17:22:04",
+      "arguments": {
+       "level": "5_14_3",
+       "precision": 500,
+       "out": "dvk-database/build/data",
+       "pairs": null,
+       "precision_reason": "highest precision; P200 superseded"
+      },
+      "datasets": {
+       "path": "datasets",
+       "commit": "82923d321f40aed261d2212c06740042156a99ff",
+       "branch": "main",
+       "dirty": false
+      },
+      "datasets_versions": "Last sync: 2026-11-18T16:20:42\nSage: SageMath version 10.1, Release Date: 2023-08-20\ndarmonpoints-dev: 0e2e1629fe7889f40b9c1311d866933244705a57\nlevel-computations-dev: 3ee61b87ae60f60de05f9ec3916f98e2d13e39d1\n",
+      "code": {
+       "level-computations-dev": {
+        "path": "level-computations-dev",
+        "commit": "3ee61b87ae60f60de05f9ec3916f98e2d13e39d1",
+        "branch": "main",
+        "dirty": false
+       },
+       "darmonpoints-dev": {
+        "path": "darmonpoints-dev",
+        "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+        "branch": "dvk-level-experimental",
+        "dirty": false
+       },
+       "dvk-database": {
+        "path": "dvk-database",
+        "commit": "19d91e9785ef7024b7f60b7828573d882e2a8985",
+        "branch": "master",
+        "dirty": false
+       }
+      },
+      "schema_version": 2
+     }
+    },
+    "7_6_5": {
+     "p": 7,
+     "D": 6,
+     "N": 5,
+     "precision": 500,
+     "padic_field": {
+      "p": 7,
+      "cap": 500,
+      "modulus": "x^2 - x - 1",
+      "gen": "g"
+     },
+     "padic_fields": [
+      {
+       "p": 7,
+       "cap": 500,
+       "modulus": "x^2 - x - 1",
+       "gen": "g"
+      }
+     ],
+     "sessions": {
+      "5": "131126_050847",
+      "24": "131126_050954",
+      "69": "131126_051017"
+     },
+     "runs": {
+      "5": {
+       "manifest": "manifests/level_7_6_5_500_131126_050847.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "T11",
+        "terms": "[(1, (('T', 11),))]",
+        "eisenstein": 12,
+        "height": 12,
+        "source": "investigations/i_level_feasibility/results/probe_7_6_5.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-13T05:10:49",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "24": {
+       "manifest": "manifests/level_7_6_5_500_131126_050954.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "T11",
+        "terms": "[(1, (('T', 11),))]",
+        "eisenstein": 12,
+        "height": 12,
+        "source": "investigations/i_level_feasibility/results/probe_7_6_5.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-13T05:10:49",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      },
+      "69": {
+       "manifest": "manifests/level_7_6_5_500_131126_051017.manifest.json",
+       "killer": {
+        "type": "B",
+        "name": "T11",
+        "terms": "[(1, (('T', 11),))]",
+        "eisenstein": 12,
+        "height": 12,
+        "source": "investigations/i_level_feasibility/results/probe_7_6_5.sobj"
+       },
+       "magma_version": "2 27 7",
+       "start": "2026-11-13T05:10:49",
+       "code": {
+        "level-computations-dev": {
+         "commit": "5b74275d9027c1d707de6829d82e3b8b2cf63744",
+         "branch": "main",
+         "dirty": ""
+        },
+        "darmonpoints-dev": {
+         "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+         "branch": "dvk-level-experimental",
+         "dirty": ""
+        }
+       }
+      }
+     },
+     "killers": [
+      "{\"eisenstein\": 12, \"height\": 12, \"name\": \"T11\", \"source\": \"investigations/i_level_feasibility/results/probe_7_6_5.sobj\", \"terms\": \"[(1, (('T', 11),))]\", \"type\": \"B\"}"
+     ],
+     "precision_reason": "highest precision; P200 and P300 not exported; support lindeps at P500",
+     "discs": [
+      5,
+      24,
+      69
+     ],
+     "n_points": 640,
+     "pairs": [
+      {
+       "Dco": 5,
+       "Dcy": 24,
+       "n_points": 64,
+       "H": "x^8 + 152*x^4 - 1920*x^2 + 5776",
+       "H_agrees": true,
+       "file": "jvalues/7_6_5/pairs/5_24.json",
+       "bytes": 683370
+      },
+      {
+       "Dco": 5,
+       "Dcy": 69,
+       "n_points": 128,
+       "H": "x^8 + 30*x^6 + 527*x^4 - 7890*x^2 + 22801",
+       "H_agrees": true,
+       "file": "jvalues/7_6_5/pairs/5_69.json",
+       "bytes": 1385924
+      },
+      {
+       "Dco": 24,
+       "Dcy": 5,
+       "n_points": 64,
+       "H": "x^8 + 152*x^4 - 1920*x^2 + 5776",
+       "H_agrees": true,
+       "file": "jvalues/7_6_5/pairs/24_5.json",
+       "bytes": 581815
+      },
+      {
+       "Dco": 24,
+       "Dcy": 69,
+       "n_points": 128,
+       "H": "x^8 + 34*x^6 + 295*x^4 + 654*x^2 + 9",
+       "H_agrees": true,
+       "file": "jvalues/7_6_5/pairs/24_69.json",
+       "bytes": 841693
+      },
+      {
+       "Dco": 69,
+       "Dcy": 5,
+       "n_points": 128,
+       "H": "x^8 + 30*x^6 + 527*x^4 - 7890*x^2 + 22801",
+       "H_agrees": true,
+       "file": "jvalues/7_6_5/pairs/69_5.json",
+       "bytes": 1306451
+      },
+      {
+       "Dco": 69,
+       "Dcy": 24,
+       "n_points": 128,
+       "H": "x^8 + 34*x^6 + 295*x^4 + 654*x^2 + 9",
+       "H_agrees": true,
+       "file": "jvalues/7_6_5/pairs/69_24.json",
+       "bytes": 1051523
+      }
+     ],
+     "index": "jvalues/7_6_5/index.json",
+     "index_bytes": 94368,
+     "labels": {
+      "available": false,
+      "reason": "no labels for 7_6_5 in investigations/j_shimura_reciprocity/results/labels.json"
+     },
+     "provenance": {
+      "exported": "2026-11-25T17:22:22",
+      "arguments": {
+       "level": "7_6_5",
+       "precision": 500,
+       "out": "dvk-database/build/data",
+       "pairs": null,
+       "precision_reason": "highest precision; P200 and P300 not exported; support lindeps at P500"
+      },
+      "datasets": {
+       "path": "datasets",
+       "commit": "82923d321f40aed261d2212c06740042156a99ff",
+       "branch": "main",
+       "dirty": false
+      },
+      "datasets_versions": "Last sync: 2026-11-18T16:20:42\nSage: SageMath version 10.1, Release Date: 2023-08-20\ndarmonpoints-dev: 0e2e1629fe7889f40b9c1311d866933244705a57\nlevel-computations-dev: 3ee61b87ae60f60de05f9ec3916f98e2d13e39d1\n",
+      "code": {
+       "level-computations-dev": {
+        "path": "level-computations-dev",
+        "commit": "3ee61b87ae60f60de05f9ec3916f98e2d13e39d1",
+        "branch": "main",
+        "dirty": false
+       },
+       "darmonpoints-dev": {
+        "path": "darmonpoints-dev",
+        "commit": "0e2e1629fe7889f40b9c1311d866933244705a57",
+        "branch": "dvk-level-experimental",
+        "dirty": false
+       },
+       "dvk-database": {
+        "path": "dvk-database",
+        "commit": "19d91e9785ef7024b7f60b7828573d882e2a8985",
+        "branch": "master",
+        "dirty": false
+       }
+      },
+      "schema_version": 2
+     }
+    }
+   }
+  }
+ },
+ "updated": "2026-11-25T17:22:22"
+}

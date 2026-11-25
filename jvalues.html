@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J Values Browser</title>
+<meta name="description" content="Browse and filter the J values and their recognitions.">
+<link rel="stylesheet" href="vendor/tabulator-6.6.1/tabulator_simple.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Quaternionic Darmon–Vonk data</a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="jvalues.html" aria-current="page">J values</a>
+    <a href="precomputed.html">Algebras and groups</a>
+    <a href="help.html">Help</a>
+  </nav>
+</header>
+<main class="wide">
+  <h1>J values</h1>
+  <div class="levels" id="levels"></div>
+  <div class="level-info" id="level-info"></div>
+  <div class="toolbar" id="filters"></div>
+  <div class="status-line">
+    <span id="status">Loading…</span>
+    <span id="breakdown"></span>
+    <div class="actions">
+      <button class="btn" id="reset">Reset filters</button>
+      <button class="btn" id="copy-selected" disabled>Copy selected as Sage</button>
+      <button class="btn" id="copy-filtered">Copy shown as Sage</button>
+      <button class="btn" id="csv">Download CSV</button>
+    </div>
+  </div>
+  <div id="table"></div>
+  <p class="hint">Click a label to open the value; click a dotted name or an ⓘ for its meaning (all of them: <a href="help.html">Help</a>). Ctrl+double-click (⌘+double-click) a row copies its Sage line;
+    double-click a cell copies its content. Select rows with the checkboxes to copy several values at once.</p>
+  <div id="perf" hidden></div>
+</main>
+<footer class="site-footer">
+  <span id="footer-version">…</span>
+  <span id="footer-schema">Data format: SCHEMA.md</span>
+</footer>
+<script src="vendor/tabulator-6.6.1/tabulator.min.js"></script>
+<script type="module" src="assets/jvalues.js"></script>
+</body>
+</html>

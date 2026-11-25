@@ -1,0 +1,14 @@
+{
+ "version": "preview",
+ "built": "2026-11-25T21:02:45",
+ "doi": null,
+ "concept_doi": null,
+ "repo_url": "https://github.com/GeraGC/qdv-database",
+ "authors": [
+  "Gerard Gonzalo Calbet\u00f3"
+ ],
+ "title": "QDV database: quaternionic Darmon\u2013Vonk J values and their algebraic recognitions",
+ "build_commit": "e0c09fa151aff038631703d59412654f2a53b7d3",
+ "build_dirty": false,
+ "public": true
+}

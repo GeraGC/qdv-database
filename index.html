@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quaternionic Darmon–Vonk Data</title>
+<meta name="description" content="Companion database of the quaternionic Darmon–Vonk J values: p-adic values of rigid meromorphic cocycles at real quadratic cycles, with their algebraic recognitions.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Quaternionic Darmon–Vonk data</a>
+  <nav class="site-nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="jvalues.html">J values</a>
+    <a href="precomputed.html">Algebras and groups</a>
+    <a href="help.html">Help</a>
+  </nav>
+</header>
+<main>
+  <h1>Quaternionic Darmon–Vonk data</h1>
+  <p class="lead">
+    This database accompanies the articles on the values of rigid meromorphic cocycles for p-arithmetic groups
+    attached to quaternion algebras, after the work of Darmon–Vonk and Guitard-Masdeu-Xarles. It holds the p-adic values J computed at real quadratic
+    cycles, and the algebraic numbers they were recognized as. Every value can be copied as a line of Sage code that
+    rebuilds it exactly.
+  </p>
+  <p class="muted small">
+    New here? The <a href="help.html">help pages</a> explain every column, filter and term. The recognitions are <a href="knowl.html?id=evidence">numerical evidence</a>: a value is recognized when a relation holds to the stated number of
+    p-adic digits. A held-out check and the agreement of independent methods are shown for each value.
+  </p>
+
+  <section class="cite" id="cite" hidden>
+    <h2>How to cite</h2>
+    <p id="cite-text"></p>
+  </section>
+
+  <div class="cards" id="cards">
+    <section class="card">
+      <h2>J values</h2>
+      <p>Values J of the cocycles of discriminant D<sub>co</sub> at the cycles of discriminant D<sub>cy</sub>, in four
+        parities, with their lindep, algdep and in-field recognitions and the comparison of the certificates.</p>
+      <p class="stats" id="jvalues-stats">Loading…</p>
+      <a class="btn primary" href="jvalues.html">Browse J values</a>
+    </section>
+    <section class="card">
+      <h2>Quaternion algebras and groups</h2>
+      <p>The quaternion algebras, Eichler orders, candidates and optimal embeddings used in the computations, with the
+        stored arithmetic groups (presentations, fundamental domains, p-adic splittings).</p>
+      <p class="stats" id="pre-stats">Loading…</p>
+      <a class="btn primary" href="precomputed.html">Browse algebras and groups</a>
+    </section>
+    <section class="card soon">
+      <h2>Investigations</h2>
+      <p>Visual summaries of the experiments: Shimura reciprocity, valuations against Rickards' intersection numbers,
+        Hecke eigenforms.</p>
+      <p class="stats">In preparation</p>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <span id="footer-version">…</span>
+  <span id="footer-schema">Data format: SCHEMA.md</span>
+</footer>
+<script type="module">
+import { getCatalog, getJSON, getRelease, doiLink, esc, renderFooter } from "./assets/common.js";
+getRelease().then((rel) => {
+  if (!rel.doi && !rel.concept_doi) return;
+  // AUTHORS are filled in at release time (CITATION.cff); the DOIs come from data/release.json
+  const authors = (rel.authors || []).join(", ");
+  document.getElementById("cite-text").innerHTML = `${authors ? esc(authors) + ". " : ""}${esc(rel.title || "Quaternionic Darmon–Vonk data")}, release ${esc(rel.version)}. Zenodo, ${doiLink(rel.doi)}${
+    rel.concept_doi ? ` (all versions: ${doiLink(rel.concept_doi)})` : ""}. Please cite the specific release you used.`;
+  document.getElementById("cite").hidden = false;
+});
+renderFooter();
+getJSON("precomputed/tree.json").then((t) => {
+  const orders = t.algebras.reduce((s, a) => s + a.orders.length, 0);
+  const groups = t.algebras.reduce((s, a) => s + a.orders.reduce((u, o) => u + o.fuchsian.length + o.candidates.reduce((v, c) => v + c.sarith.length, 0), 0), 0);
+  document.getElementById("pre-stats").textContent = `${t.algebras.length} algebras · ${orders} Eichler orders · ${groups} stored groups`;
+}).catch(() => { document.getElementById("pre-stats").textContent = "Not available"; });
+getCatalog().then((cat) => {
+  const levels = cat.kinds.jvalues.levels;
+  const names = Object.keys(levels);
+  const points = names.reduce((s, l) => s + levels[l].n_points, 0);
+  const desc = names.map((l) => `${l.replaceAll("_", ".")} (P${levels[l].precision})`).join(", ");
+  document.getElementById("jvalues-stats").textContent =
+    `${points.toLocaleString("en")} values · triplet${names.length > 1 ? "s" : ""} ${desc}`;
+}).catch((e) => {
+  document.getElementById("jvalues-stats").textContent = `Could not load the catalog: ${e.message}`;
+});
+</script>
+</body>
+</html>
