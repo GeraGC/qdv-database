@@ -29,9 +29,10 @@
 <script src="vendor/katex-0.16.47/katex.min.js"></script>
 <script type="module">
 import { KNOWLS, CATEGORIES } from "./assets/knowls.js";
-import { renderMath } from "./assets/knowl-ui.js";
+import { renderMath, initKnowls } from "./assets/knowl-ui.js";
 import { renderFooter, esc } from "./assets/common.js";
 renderFooter();
+initKnowls();
 if (Object.values(KNOWLS).some((k) => !k.reviewed)) document.getElementById("draft-note").hidden = false;
 document.getElementById("list").innerHTML = CATEGORIES.map(([cat, name]) => {
   const items = Object.entries(KNOWLS).filter(([, k]) => k.cat === cat);

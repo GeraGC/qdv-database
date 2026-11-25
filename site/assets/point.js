@@ -48,11 +48,11 @@ function sectionValue(pt, pair) {
       <span class="muted small">(${x.length} digits)</span></div>`).join("");
   return `
   <h2>Value${ki("padic_field")}</h2>
-  <p>K = ℚ<sub>${f.p}</sub>(g) with <span data-tex="${esc(polyTex(f.modulus.replace(/x/g, "g")))} = 0"></span>
+  <p>K<sub>p</sub> = ℚ<sub>${f.p}</sub>(g) with <span data-tex="${esc(polyTex(f.modulus.replace(/x/g, "g")))} = 0"></span>
     (Sage: <code>Qp(${f.p}, ${f.cap}).extension(${esc(f.modulus)})</code>).
-    The value is stored as <span data-tex="J = ${f.p}^{v}(u_0 + u_1 g) + O(${f.p}^{N})"></span>
-    with v = ${J.v} and N = ${J.prec}.</p>
-  <div class="formula" data-tex-display="${esc(`${pt.parity === "Jp" ? "J_+" : pt.parity === "Jm" ? "J_-" : pt.parity === "Je" ? "J_e" : "J_o"} = ${padicTex(J, f.p, 8)}`)}"></div>
+    The value is stored as <span data-tex="J = ${f.p}^{v}(u_0 + u_1 g) + O(${f.p}^{P})"></span>
+    with v = ${J.v} and P = ${J.prec}.</p>
+  <div class="formula" data-tex-display="${esc(`${pt.parity === "Jp" ? "J^+" : pt.parity === "Jm" ? "J^-" : pt.parity === "Je" ? "J^e" : "J^o"} = ${padicTex(J, f.p, 8)}`)}"></div>
   <div class="kv">${unit}</div>
   <details><summary>All digits of u<sub>0</sub>, u<sub>1</sub></summary>
     ${J.u.map((x, k) => `<p class="small muted">u<sub>${k}</sub></p><div class="bigval">${esc(x)}</div>`).join("")}
@@ -74,9 +74,9 @@ function sectionCertificates(pt) {
   <h2>Recognition${ki("certificates")}</h2>
   <p><span class="badge ${CERT_CLASS[c.status] ?? ""}">${esc(c.status)}</span> ${esc(CERT_TEXT[c.status] || "")}.</p>
   <p class="small muted">Each method is reduced to the minimal polynomial over ℚ of the canonical value
-    <span data-tex="T = (J/p^{v(J)})^{M}"></span>, <span data-tex="M = \\operatorname{lcm}(12, p^2-1)"></span>,
+    <span data-tex="\\tilde{J} = (J/p^{v(J)})^{M}"></span>, <span data-tex="M = \\operatorname{lcm}(12, p^2-1)"></span>,
     which removes the roots of unity, powers and p-powers on which the methods differ. Methods agree when these
-    polynomials are equal. “Digits” is the number of p-adic digits that polynomial cancels at T. “Confirmed” is the
+    polynomials are equal. “Digits” is the number of p-adic digits that polynomial cancels at <span data-tex="\\tilde{J}"></span>. “Confirmed” is the
     method's own held-out check (lindep has none).</p>
   ${rows ? `<div class="scroll-x"><table class="data"><thead><tr><th>Method</th><th>Degree</th><th>Digits / precision</th><th>Confirmed</th>
     <th>Counted</th><th>Group</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>` : ""}

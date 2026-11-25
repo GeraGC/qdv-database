@@ -209,6 +209,13 @@ details > summary { cursor: pointer; color: var(--accent); }
 .knowl-foot { margin-top: 6px; font-size: 0.85em; }
 .knowl-page { max-width: 860px; }
 .knowl-page .source { font-size: 0.85em; color: var(--muted); }
+.knowl-nav { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 12px; align-items: baseline;
+  margin-top: 2em; padding-top: 12px; border-top: 1px solid var(--border); }
+.knowl-nav > :last-child { text-align: right; }
+@media (max-width: 600px) {
+  .knowl-nav { grid-template-columns: 1fr; }
+  .knowl-nav > :last-child { text-align: left; }
+}
 .help-list { list-style: none; padding: 0; margin: 0; }
 .help-list li { margin: 0 0 12px; }
 .help-list .t { font-weight: 600; }

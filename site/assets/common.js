@@ -19,10 +19,10 @@ export const getCatalog = () => getJSON("catalog.json");
 
 export const PARITIES = ["Jp", "Jm", "Je", "Jo"];
 export const PARITY_TEX = {
-  Jp: "J_+ = J_{\\mathrm{even}}\\, J_0 / J_{\\mathrm{odd}}",
-  Jm: "J_- = J_{\\mathrm{even}}\\, J_{\\mathrm{odd}}\\, J_0",
-  Je: "J_e = J_{\\mathrm{even}}\\, J_0",
-  Jo: "J_o = J_{\\mathrm{odd}}",
+  Jp: "J^+ = J_{\\mathrm{even}}\\, J_0 / J_{\\mathrm{odd}}",
+  Jm: "J^- = J_{\\mathrm{even}}\\, J_{\\mathrm{odd}}\\, J_0",
+  Je: "J^e = J_{\\mathrm{even}}\\, J_0",
+  Jo: "J^o = J_{\\mathrm{odd}}",
 };
 
 const LABEL_RE = /^(\d+)\.(\d+)\.(\d+)-(\d+)\.(\d+)-(\d+)\.(\d+)-(J[pmeo])$/;

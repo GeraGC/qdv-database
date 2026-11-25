@@ -30,6 +30,11 @@ for f in list(SITE.glob("*.html")) + list((SITE / "assets").glob("*.js")):
     for pat in patterns:
         for m in re.findall(pat, f.read_text()):
             used.setdefault(m, set()).add(f.name)
+# links between entries: kl("id", ...) and cite("key", ...) (the entry ref_<key>) in knowls.js
+for m in re.findall(r'\bkl\("(\w+)"', src):
+    used.setdefault(m, set()).add("knowls.js")
+for m in re.findall(r'\bcite\("(\w+)"', src):
+    used.setdefault(f"ref_{m}", set()).add("knowls.js")
 missing = {k: sorted(v) for k, v in used.items() if k not in ids}
 unused = sorted(set(ids) - set(used))
 drafts = len(re.findall(r"reviewed: false", body))

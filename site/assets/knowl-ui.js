@@ -48,6 +48,8 @@ function closeKnowl() {
 
 export async function openKnowl(anchor, id) {
   const k = KNOWLS[id];
+  // measured before closing: the anchor may be a term inside the popover being replaced
+  const r = anchor.getBoundingClientRect();
   closeKnowl();
   if (!k) {
     console.warn("unknown knowl", id);
@@ -65,7 +67,6 @@ export async function openKnowl(anchor, id) {
     <div class="knowl-foot"><a href="knowl.html?id=${id}">More</a> · <a href="help.html">All explanations</a></div>`;
   document.body.appendChild(pop);
   pop.querySelector(".knowl-close").addEventListener("click", closeKnowl);
-  const r = anchor.getBoundingClientRect();
   const width = pop.offsetWidth;
   const left = Math.max(8, Math.min(window.scrollX + r.left, window.scrollX + document.documentElement.clientWidth - width - 8));
   pop.style.left = `${left}px`;
